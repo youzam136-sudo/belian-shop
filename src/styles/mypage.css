@@ -1,5 +1,5 @@
 /* ========================================
-   MY PAGE
+MY PAGE
 ======================================== */
 
 .mypage {
@@ -21,9 +21,8 @@
     margin: 0 auto;
 }
 
-
 /* ========================================
-   LEFT SIDE MENU
+LEFT SIDE MENU
 ======================================== */
 
 .mypage-sidebar {
@@ -64,18 +63,16 @@
     font-weight: 700;
 }
 
-
 /* ========================================
-   CONTENT
+CONTENT
 ======================================== */
 
 .mypage-content {
     min-width: 0;
 }
 
-
 /* ========================================
-   QUICK MENU
+QUICK MENU
 ======================================== */
 
 .mypage-quick-menu {
@@ -143,9 +140,8 @@
     font-size: 12px;
 }
 
-
 /* ========================================
-   ORDER HISTORY
+ORDER HISTORY
 ======================================== */
 
 .order-history {
@@ -166,9 +162,8 @@
     gap: 28px;
 }
 
-
 /* ========================================
-   ORDER CARD
+ORDER CARD
 ======================================== */
 
 .order-card {
@@ -197,7 +192,6 @@
 
     background: #ddd;
 }
-
 
 /* 임시 상품 이미지 */
 
@@ -252,7 +246,6 @@
     background: #ddd;
 }
 
-
 /* PRODUCT INFO */
 
 .order-product-info {
@@ -302,7 +295,6 @@
     cursor: pointer;
 }
 
-
 /* STATUS */
 
 .order-status {
@@ -321,6 +313,71 @@
     cursor: pointer;
 }
 
+/* 펼쳐보기 눌렀을 때 카드 안에 나타나는 나머지 주문 상품 목록 */
+
+.order-sub-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-top: 18px;
+    padding-top: 18px;
+
+    border-top: 1px solid #eee;
+
+    animation: order-sub-reveal 0.4s var(--ease-premium) both;
+}
+
+@keyframes order-sub-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .order-sub-list {
+        animation: none;
+    }
+}
+
+.order-sub-item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.order-sub-item .order-product-image {
+    width: 64px;
+    height: 64px;
+}
+
+.order-sub-item h4 {
+    margin: 0 0 4px;
+
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.order-sub-item p {
+    margin: 0;
+
+    color: #707070;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
 
 /* 펼쳐보기 */
 
@@ -340,10 +397,8 @@
     cursor: pointer;
 }
 
-
-
 /* =========================================================
-   MOBILE
+MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -362,17 +417,15 @@
         margin: 0;
     }
 
-
     /* PC 사이드 메뉴 숨김 */
 
     .mypage-sidebar {
         display: none;
     }
 
-
     /* ========================================
-     QUICK MENU
-  ======================================== */
+    QUICK MENU
+    ======================================== */
 
     .mypage-quick-menu {
         grid-template-columns:
@@ -412,7 +465,6 @@
         font-size: 12px;
     }
 
-
     /* 5개 중 마지막 2개를 가운데 정렬 */
 
     .mypage-quick-item:nth-child(4) {
@@ -425,10 +477,9 @@
         justify-self: center;
     }
 
-
     /* ========================================
-     ORDER HISTORY
-  ======================================== */
+    ORDER HISTORY
+    ======================================== */
 
     .order-history {
         margin-top: 30px;
@@ -444,10 +495,9 @@
         gap: 14px;
     }
 
-
     /* ========================================
-     ORDER CARD
-  ======================================== */
+    ORDER CARD
+    ======================================== */
 
     .order-card {
         padding: 14px;
@@ -511,6 +561,32 @@
         font-size: 12px;
 
         white-space: nowrap;
+    }
+
+    .order-sub-list {
+        gap: 12px;
+
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+
+    .order-sub-item {
+        grid-template-columns: 50px 1fr;
+
+        gap: 10px;
+    }
+
+    .order-sub-item .order-product-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .order-sub-item h4 {
+        font-size: 13px;
+    }
+
+    .order-sub-item p {
+        font-size: 11px;
     }
 
     .order-more {
