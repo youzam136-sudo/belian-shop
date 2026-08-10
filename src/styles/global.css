@@ -4,6 +4,12 @@
     --page-width: min(1310px, 94vw);
     --content-width: min(1597px, 94vw);
     --brown: #9f7656;
+
+    /* 프리미엄 이징 커브
+       ease-premium: 감속이 부드럽고 길게 이어지는 커브 (ease-out-expo 계열)
+       ease-premium-soft: 시작/끝 모두 부드러운 in-out 커브 (호버 등 짧은 인터랙션용) */
+    --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-premium-soft: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 * {
@@ -47,15 +53,20 @@ img {
 
 .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(32px) scale(0.97);
+    filter: blur(6px);
 
-    transition: opacity 0.7s ease, transform 0.7s ease;
-    will-change: opacity, transform;
+    transition:
+        opacity 0.9s var(--ease-premium),
+        transform 0.9s var(--ease-premium),
+        filter 0.9s var(--ease-premium);
+    will-change: opacity, transform, filter;
 }
 
 .reveal.is-visible {
     opacity: 1;
     transform: none;
+    filter: blur(0);
 }
 
 .reveal-delay-1 { transition-delay: 0.1s; }
@@ -67,6 +78,7 @@ img {
     .reveal {
         opacity: 1;
         transform: none;
+        filter: none;
         transition: none;
     }
 }

@@ -53,6 +53,8 @@
 
 .header-left>a,
 .header-menu-item>a {
+    position: relative;
+
     display: flex;
     align-items: center;
 
@@ -61,6 +63,30 @@
     color: #111;
 
     white-space: nowrap;
+}
+
+/* 하단에서 부드럽게 슬라이드되며 채워지는 언더라인 */
+.header-left>a::after,
+.header-menu-item>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #111;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-premium-soft);
+}
+
+.header-left>a:hover::after,
+.header-menu-item>a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 
