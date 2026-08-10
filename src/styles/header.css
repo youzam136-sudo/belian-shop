@@ -3,7 +3,8 @@
 ======================================== */
 
 .header {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 
     width: 100%;
@@ -14,6 +15,19 @@
     border-bottom: 1px solid #eee;
 
     background: #fff;
+
+    /* 반응형 브레이크포인트에서 높이가 바뀔 때 부드럽게 전환 */
+    transition: height 0.5s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+}
+
+.header.is-scrolled {
+    box-shadow: 0 8px 24px -18px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header {
+        transition: none;
+    }
 }
 
 

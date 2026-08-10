@@ -7,9 +7,12 @@
 
     /* 프리미엄 이징 커브
        ease-premium: 감속이 부드럽고 길게 이어지는 커브 (ease-out-expo 계열)
-       ease-premium-soft: 시작/끝 모두 부드러운 in-out 커브 (호버 등 짧은 인터랙션용) */
+       ease-premium-soft: 시작/끝 모두 부드러운 in-out 커브 (호버 등 짧은 인터랙션용)
+       ease-bounce: 살짝 튕기듯 확대됐다가 제자리로 돌아오는 오버슈트 커브
+                    (키워드 필터처럼 콘텐츠가 팝업되는 느낌을 줄 때 사용) */
     --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-premium-soft: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 * {

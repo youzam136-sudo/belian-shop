@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 
@@ -8,6 +8,29 @@ function Header() {
     const [communityOpen, setCommunityOpen] = useState(false);
     const [mypageOpen, setMypageOpen] = useState(false);
     const [languageOpen, setLanguageOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    // 헤더가 화면 상단에 고정된(sticky) 상태에서 스크롤이 조금이라도
+    // 내려가면 살짝 그림자를 줘서 "떠 있는" 느낌을 자연스럽게 표현한다.
+    useEffect(() => {
+        let ticking = false;
+
+        const updateScrolled = () => {
+            setIsScrolled(window.scrollY > 4);
+            ticking = false;
+        };
+
+        const handleScroll = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(updateScrolled);
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const closeMobileMenu = () => {
         setMobileOpen(false);
@@ -18,7 +41,7 @@ function Header() {
     };
 
     return (
-        <header className="header">
+        <header className={`header${isScrolled ? " is-scrolled" : ""}`}>
             <div className="header-inner">
                 {/* =========================
             PC LEFT

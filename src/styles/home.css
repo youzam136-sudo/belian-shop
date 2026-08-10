@@ -10,37 +10,66 @@
     height: 815px;
 
     overflow: hidden;
+
+    /* 화면 크기가 바뀔 때(반응형 전환) 높이가 툭 끊기지 않고
+       부드럽게 늘어나거나 줄어들도록 */
+    transition: height 0.6s var(--ease-premium);
 }
 
-/* 배경 이미지를 별도 레이어로 분리해서, 페이지 진입 시
-   살짝 확대된 상태에서 원래 크기로 부드럽게 줄어드는
-   "시네마틱 줌인" 효과를 준다. (hero-copy 등 콘텐츠는 영향 없음) */
-.hero::before {
-    content: "";
+/* 슬라이드 레이어들을 쌓아두는 컨테이너 */
+.hero-slides {
     position: absolute;
     inset: 0;
     z-index: 0;
-
-    background: url(../assets/main-hero.png) no-repeat center;
-    background-size: cover;
-
-    transform: scale(1.12);
-    filter: blur(2px);
-    animation: hero-zoom-in 2.4s var(--ease-premium) forwards;
 }
 
-@keyframes hero-zoom-in {
+/* 슬라이드 한 장. 활성화되지 않은 슬라이드는 투명하게 숨겨두고,
+   활성화되는 순간 크로스페이드 + 켄번즈(서서히 줌아웃) 효과를 준다.
+   배경이미지 방식(cover)이라 나중에 비율이 조금 다른 이미지로
+   교체되어도 레이아웃이 깨지지 않는다. */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    opacity: 0;
+    transform: scale(1.08);
+
+    transition: opacity 1.2s var(--ease-premium);
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    z-index: 1;
+
+    animation: hero-slide-zoom 8s var(--ease-premium-soft) forwards;
+}
+
+@keyframes hero-slide-zoom {
+    from {
+        transform: scale(1.08);
+    }
+
     to {
         transform: scale(1);
-        filter: blur(0);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero::before {
+    .hero {
+        transition: none;
+    }
+
+    .hero-slide {
+        transition: opacity 0.3s ease;
+    }
+
+    .hero-slide.is-active {
         animation: none;
         transform: scale(1);
-        filter: none;
     }
 }
 
@@ -64,6 +93,56 @@
     transform: translateY(-50%);
 
     color: #fff;
+
+    /* 반응형 브레이크포인트에서 위치(top/left)가 바뀔 때
+       부드럽게 이동하도록 */
+    transition: top 0.6s var(--ease-premium), left 0.6s var(--ease-premium);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-copy {
+        transition: none;
+    }
+}
+
+/* 슬라이드 인디케이터 (점 -> 활성화되면 알약 모양으로 늘어남) */
+.hero-dots {
+    position: absolute;
+    z-index: 3;
+
+    left: 50%;
+    bottom: 36px;
+
+    display: flex;
+    gap: 10px;
+
+    transform: translateX(-50%);
+}
+
+.hero-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+
+    transition:
+        width 0.5s var(--ease-premium),
+        background-color 0.5s var(--ease-premium);
+}
+
+.hero-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.hero-dot.is-active {
+    width: 28px;
+    background: #fff;
 }
 
 .hero-copy h1 {
@@ -625,8 +704,9 @@
     cursor: pointer;
 
     transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+        background-color 0.3s var(--ease-premium),
+        color 0.3s var(--ease-premium),
+        transform 0.3s var(--ease-premium);
 }
 
 .keyword-list button:hover,
@@ -636,11 +716,44 @@
     font-weight: 500;
 }
 
+.keyword-list button:active {
+    transform: scale(0.93);
+}
+
 .keyword-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
     gap: 26px;
+}
+
+/* 키워드 버튼을 클릭해 activeKeyword가 바뀌면 카드들이
+   새로 마운트되면서(React key 변경) 이 애니메이션이 매번 다시 실행된다.
+   살짝 아래에서 위로 튀어 오르며 자연스럽게 나타나는 느낌 */
+.keyword-grid article {
+    animation: keyword-pop-in 0.6s var(--ease-bounce) both;
+}
+
+.keyword-grid article:nth-child(1) { animation-delay: 0s; }
+.keyword-grid article:nth-child(2) { animation-delay: 0.08s; }
+.keyword-grid article:nth-child(3) { animation-delay: 0.16s; }
+
+@keyframes keyword-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .keyword-grid article {
+        animation: none;
+    }
 }
 
 .keyword-thumb {
