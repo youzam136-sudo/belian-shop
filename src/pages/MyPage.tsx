@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "../styles/mypage.css";
 
 import Header from "../components/Header";
@@ -17,6 +19,11 @@ type Order = {
     description: string;
     status: string;
     image?: string;
+};
+
+type SubOrder = {
+    name: string;
+    description: string;
 };
 
 const orders: Order[] = [
@@ -40,6 +47,18 @@ const orders: Order[] = [
         name: "스킨케어 제품",
         description: "손잡이 없이 깔끔하게! 터치 한번으로 간편하게!",
         status: "배송확인",
+    },
+];
+
+// 펼쳐보기를 누르면 카드 안에 추가로 보여줄 나머지 주문 상품들
+const subOrders: SubOrder[] = [
+    {
+        name: "스킨케어 제품",
+        description: "피부에 촉촉한 수분감을 채워주는 제품",
+    },
+    {
+        name: "스킨케어 제품",
+        description: "매일 부담 없이 사용할 수 있는 데일리 케어",
     },
 ];
 
@@ -78,6 +97,7 @@ const quickMenus = [
 
 function OrderCard({ order, delay }: { order: Order; delay?: 1 | 2 | 3 | 4 }) {
     const { ref, isVisible } = useReveal<HTMLElement>();
+    const [isExpanded, setIsExpanded] = useState(false);
 
     return (
         <article
@@ -119,11 +139,34 @@ function OrderCard({ order, delay }: { order: Order; delay?: 1 | 2 | 3 | 4 }) {
                 </button>
             </div>
 
+            {isExpanded && (
+                <div className="order-sub-list">
+                    {subOrders.map((sub, index) => (
+                        <div className="order-sub-item" key={index}>
+                            <div className="order-product-image">
+                                <div className="mypage-product-placeholder" />
+                            </div>
+
+                            <div className="order-product-info">
+                                <h4>
+                                    {sub.name}
+                                </h4>
+
+                                <p>
+                                    {sub.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
             <button
                 type="button"
                 className="order-more"
+                onClick={() => setIsExpanded((prev) => !prev)}
             >
-                총 3건 주문 펼쳐보기
+                {isExpanded ? "접기" : "총 3건 주문 펼쳐보기"}
             </button>
         </article>
     );
@@ -174,7 +217,6 @@ function MyPage() {
                         <div className="mypage-sidebar-line bottom" />
                     </aside>
 
-
                     {/* CONTENT */}
                     <section className="mypage-content">
 
@@ -203,7 +245,6 @@ function MyPage() {
                                 </button>
                             ))}
                         </div>
-
 
                         {/* ORDER HISTORY */}
                         <div ref={historyRef} className={revealClass("order-history", historyVisible, 2)}>
