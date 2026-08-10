@@ -1,0 +1,324 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import "../styles/header.css";
+
+function Header() {
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [shopOpen, setShopOpen] = useState(false);
+    const [communityOpen, setCommunityOpen] = useState(false);
+    const [mypageOpen, setMypageOpen] = useState(false);
+    const [languageOpen, setLanguageOpen] = useState(false);
+
+    const closeMobileMenu = () => {
+        setMobileOpen(false);
+        setShopOpen(false);
+        setCommunityOpen(false);
+        setMypageOpen(false);
+        setLanguageOpen(false);
+    };
+
+    return (
+        <header className="header">
+            <div className="header-inner">
+                {/* =========================
+            PC LEFT
+        ========================= */}
+                <nav className="header-left">
+                    <Link to="/">
+                        브랜드소개
+                    </Link>
+
+                    <div className="header-menu-item">
+                        <Link to="/shop">
+                            SHOP
+                        </Link>
+
+                        <div className="header-submenu">
+                            <Link to="/">스킨</Link>
+                            <Link to="/">크림</Link>
+                            <Link to="/">폼클렌징</Link>
+                            <Link to="/">기타</Link>
+                        </div>
+                    </div>
+
+                    <div className="header-menu-item">
+                        <Link to="/">
+                            커뮤니티
+                        </Link>
+
+                        <div className="header-submenu">
+                            <Link to="/">공지사항</Link>
+                            <Link to="/">상품문의</Link>
+                            <Link to="/">이벤트</Link>
+                        </div>
+                    </div>
+                </nav>
+
+                {/* =========================
+            LOGO
+        ========================= */}
+                <Link
+                    to="/"
+                    className="header-logo"
+                    onClick={closeMobileMenu}
+                >
+                    ONETWO
+                </Link>
+
+                {/* =========================
+            PC RIGHT
+        ========================= */}
+                <nav className="header-right">
+                    <Link to="/">
+                        로그인
+                    </Link>
+
+                    <Link to="/">
+                        회원가입
+                    </Link>
+
+                    <Link to="/mypage" className="header-arrow-link">
+                        마이페이지 <span className="header-arrow" />
+                    </Link>
+
+                    <Link to="/cart">
+                        장바구니 <b>0</b>
+                    </Link>
+
+                    <Link to="/">
+                        한국어 <span className="header-arrow" />
+                    </Link>
+                </nav>
+
+                {/* =========================
+            MOBILE HAMBURGER
+        ========================= */}
+                <button
+                    type="button"
+                    className={`mobile-menu-button ${mobileOpen ? "is-open" : ""
+                        }`}
+                    onClick={() =>
+                        setMobileOpen((prev) => !prev)
+                    }
+                    aria-label="메뉴"
+                >
+                    <span />
+                    <span />
+                    <span />
+                </button>
+            </div>
+
+            {/* =========================
+          PC MEGA BACKGROUND
+      ========================= */}
+            <div className="header-dropdown-background" />
+
+            {/* =========================
+          MOBILE MENU
+      ========================= */}
+            <div
+                className={`mobile-menu ${mobileOpen ? "is-open" : ""
+                    }`}
+            >
+                <div className="mobile-menu-inner">
+
+                    <Link
+                        to="/"
+                        className="mobile-main-link"
+                        onClick={closeMobileMenu}
+                    >
+                        브랜드소개
+                    </Link>
+
+                    {/* SHOP */}
+                    <div className="mobile-dropdown">
+                        <button
+                            type="button"
+                            className="mobile-dropdown-button"
+                            onClick={() =>
+                                setShopOpen((prev) => !prev)
+                            }
+                        >
+                            <span>SHOP</span>
+
+                            <span
+                                className={`mobile-arrow ${shopOpen ? "is-open" : ""
+                                    }`}
+                            >
+                                ▾
+                            </span>
+                        </button>
+
+                        <div
+                            className={`mobile-submenu ${shopOpen ? "is-open" : ""
+                                }`}
+                        >
+                            <Link to="/" onClick={closeMobileMenu}>
+                                스킨
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                크림
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                폼클렌징
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                기타
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* COMMUNITY */}
+                    <div className="mobile-dropdown">
+                        <button
+                            type="button"
+                            className="mobile-dropdown-button"
+                            onClick={() =>
+                                setCommunityOpen((prev) => !prev)
+                            }
+                        >
+                            <span>커뮤니티</span>
+
+                            <span
+                                className={`mobile-arrow ${communityOpen ? "is-open" : ""
+                                    }`}
+                            >
+                                ▾
+                            </span>
+                        </button>
+
+                        <div
+                            className={`mobile-submenu ${communityOpen ? "is-open" : ""
+                                }`}
+                        >
+                            <Link to="/" onClick={closeMobileMenu}>
+                                공지사항
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                상품문의
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                이벤트
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="mobile-menu-gap" />
+
+                    <Link
+                        to="/"
+                        className="mobile-secondary-link"
+                        onClick={closeMobileMenu}
+                    >
+                        로그인
+                    </Link>
+
+                    <Link
+                        to="/"
+                        className="mobile-secondary-link"
+                        onClick={closeMobileMenu}
+                    >
+                        회원가입
+                    </Link>
+
+                    {/* MY PAGE */}
+                    <div className="mobile-dropdown secondary">
+                        <button
+                            type="button"
+                            className="mobile-dropdown-button mobile-secondary-link"
+                            onClick={() =>
+                                setMypageOpen((prev) => !prev)
+                            }
+                        >
+                            <span>마이페이지</span>
+
+                            <span
+                                className={`mobile-arrow ${mypageOpen ? "is-open" : ""
+                                    }`}
+                            >
+                                ▾
+                            </span>
+                        </button>
+
+                        <div
+                            className={`mobile-submenu ${mypageOpen ? "is-open" : ""
+                                }`}
+                        >
+                            <Link
+                                to="/mypage"
+                                onClick={closeMobileMenu}
+                            >
+                                마이페이지
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                쇼핑정보
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                최근 본 상품
+                            </Link>
+
+                            <Link to="/" onClick={closeMobileMenu}>
+                                리뷰 작성
+                            </Link>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/cart"
+                        className="mobile-secondary-link"
+                        onClick={closeMobileMenu}
+                    >
+                        장바구니 <b>0</b>
+                    </Link>
+
+                    {/* LANGUAGE */}
+                    <div className="mobile-dropdown secondary">
+                        <button
+                            type="button"
+                            className="mobile-dropdown-button mobile-secondary-link"
+                            onClick={() =>
+                                setLanguageOpen((prev) => !prev)
+                            }
+                        >
+                            <span>한국어</span>
+
+                            <span
+                                className={`mobile-arrow ${languageOpen ? "is-open" : ""
+                                    }`}
+                            >
+                                ▾
+                            </span>
+                        </button>
+
+                        <div
+                            className={`mobile-submenu ${languageOpen ? "is-open" : ""
+                                }`}
+                        >
+                            <button type="button">
+                                한국어
+                            </button>
+
+                            <button type="button">
+                                English
+                            </button>
+
+                            <button type="button">
+                                日本語
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+    );
+}
+
+export default Header;

@@ -1,0 +1,584 @@
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    position: relative;
+    z-index: 1000;
+
+    width: 100%;
+    min-width: var(--page-width);
+    height: 58px;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
+
+    background: #fff;
+}
+
+
+/* ========================================
+   HEADER INNER
+======================================== */
+
+.header-inner {
+    position: relative;
+    z-index: 20;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    width: var(--page-width);
+    height: 58px;
+
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   PC LEFT
+======================================== */
+
+.header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 32px;
+
+    height: 58px;
+
+    font-size: 16px;
+}
+
+.header-left>a,
+.header-menu-item>a {
+    display: flex;
+    align-items: center;
+
+    height: 58px;
+
+    color: #111;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   PC MENU ITEM
+======================================== */
+
+.header-menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 58px;
+}
+
+
+/* ========================================
+   PC SUBMENU
+======================================== */
+
+.header-submenu {
+    position: absolute;
+
+    top: 58px;
+    left: 0;
+
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    padding-top: 38px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+/*
+  SHOP이나 커뮤니티 중 하나에 hover하면
+  양쪽 submenu 모두 열기
+*/
+
+.header-left:has(.header-menu-item:hover) .header-submenu,
+.header-submenu:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header-submenu a {
+    color: #222;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.header-submenu a:hover {
+    color: var(--brown);
+}
+
+
+/* ========================================
+   PC DROP BACKGROUND
+======================================== */
+
+.header-dropdown-background {
+    position: absolute;
+
+    top: 58px;
+    left: 0;
+
+    z-index: 10;
+
+    width: 100%;
+    height: 0;
+
+    border-bottom: 1px solid transparent;
+
+    background: #fff;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        height 0.25s ease,
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.header:has(.header-menu-item:hover) .header-dropdown-background,
+.header:has(.header-submenu:hover) .header-dropdown-background {
+    height: 280px;
+
+    border-bottom-color: #eee;
+
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.header-logo {
+    color: #111;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.header-arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.header-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #918c84;
+}
+
+/* ========================================
+   RIGHT
+======================================== */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 19px;
+
+    height: 58px;
+
+    color: #8c837a;
+
+    font-size: 14px;
+}
+
+.header-right a {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.header-right b {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background: #9c775a;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+/* ========================================
+   MOBILE BUTTON
+======================================== */
+
+.mobile-menu-button {
+    display: none;
+}
+
+
+/* ========================================
+   MOBILE MENU
+======================================== */
+
+.mobile-menu {
+    display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ========================================
+     HEADER
+  ======================================== */
+
+    .header {
+        min-width: 0;
+        height: 70px;
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 70px;
+
+        padding: 0 24px;
+    }
+
+    .header-logo {
+        font-size: 20px;
+        letter-spacing: -0.7px;
+    }
+
+
+    /* PC 메뉴 숨김 */
+
+    .header-left,
+    .header-right,
+    .header-dropdown-background {
+        display: none;
+    }
+
+
+    /* ========================================
+     HAMBURGER
+  ======================================== */
+
+    .mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 5px;
+
+        width: 28px;
+        height: 28px;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .mobile-menu-button span {
+        display: block;
+
+        width: 24px;
+        height: 1px;
+
+        background: #555;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.2s ease;
+    }
+
+
+    /* 햄버거 → X */
+
+    .mobile-menu-button.is-open span:nth-child(1) {
+        transform:
+            translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-button.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-button.is-open span:nth-child(3) {
+        transform:
+            translateY(-6px) rotate(-45deg);
+    }
+
+
+    /* ========================================
+     MOBILE MENU PANEL
+  ======================================== */
+
+    .mobile-menu {
+        position: fixed;
+
+        top: 70px;
+        left: 0;
+
+        z-index: 999;
+
+        display: block;
+
+        width: 100%;
+        height: calc(100vh - 70px);
+
+        overflow-y: auto;
+
+        background: #fff;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            visibility 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .mobile-menu.is-open {
+        opacity: 1;
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    /* ========================================
+     MOBILE INNER
+  ======================================== */
+
+    .mobile-menu-inner {
+        width: 100%;
+
+        padding:
+            42px 34px 70px;
+    }
+
+
+    /* ========================================
+     MAIN LINKS
+  ======================================== */
+
+    .mobile-main-link,
+    .mobile-dropdown-button {
+        color: #111;
+
+        font-size: 19px;
+        font-weight: 400;
+    }
+
+    .mobile-main-link {
+        display: block;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* ========================================
+     DROPDOWN
+  ======================================== */
+
+    .mobile-dropdown {
+        margin-bottom: 28px;
+    }
+
+    .mobile-dropdown-button {
+        display: flex;
+        align-items: center;
+
+        gap: 8px;
+
+        width: fit-content;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .mobile-arrow {
+        display: inline-block;
+
+        color: #999;
+
+        font-size: 12px;
+
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-arrow.is-open {
+        transform: rotate(180deg);
+    }
+
+
+    /* ========================================
+     SUBMENU
+  ======================================== */
+
+    .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        max-height: 0;
+
+        margin-top: 0;
+        padding-left: 12px;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        transition:
+            max-height 0.3s ease,
+            margin-top 0.3s ease,
+            opacity 0.2s ease;
+    }
+
+    .mobile-submenu.is-open {
+        max-height: 300px;
+
+        margin-top: 20px;
+
+        opacity: 1;
+    }
+
+    .mobile-submenu a,
+    .mobile-submenu button {
+        width: fit-content;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        color: #857c73;
+
+        font-size: 14px;
+
+        text-align: left;
+
+        cursor: pointer;
+    }
+
+
+    /* ========================================
+     위 / 아래 그룹 사이 간격
+  ======================================== */
+
+    .mobile-menu-gap {
+        height: 42px;
+    }
+
+
+    /* ========================================
+     SECONDARY
+  ======================================== */
+
+    .mobile-secondary-link {
+        display: flex;
+        align-items: center;
+
+        gap: 7px;
+
+        width: fit-content;
+
+        margin-bottom: 23px;
+
+        color: #92887e;
+
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .mobile-dropdown.secondary {
+        margin-bottom: 0;
+    }
+
+    .mobile-dropdown.secondary .mobile-dropdown-button {
+        margin-bottom: 23px;
+
+        color: #92887e;
+
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .mobile-dropdown.secondary .mobile-submenu {
+        margin-left: 0;
+    }
+
+
+    /* cart count */
+
+    .mobile-secondary-link b {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 16px;
+        height: 16px;
+
+        background: #9c775a;
+        color: #fff;
+
+        font-size: 9px;
+        font-weight: 400;
+    }
+}
