@@ -92,11 +92,11 @@ function Header() {
             PC RIGHT
         ========================= */}
                 <nav className="header-right">
-                    <Link to="/">
+                    <Link to="/login">
                         로그인
                     </Link>
 
-                    <Link to="/">
+                    <Link to="/signup">
                         회원가입
                     </Link>
 
@@ -234,7 +234,7 @@ function Header() {
                     <div className="mobile-menu-gap" />
 
                     <Link
-                        to="/"
+                        to="/login"
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >
@@ -242,7 +242,7 @@ function Header() {
                     </Link>
 
                     <Link
-                        to="/"
+                        to="/signup"
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >

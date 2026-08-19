@@ -10,6 +10,8 @@ import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
 import ShopPage from "./pages/ShopPage";
 import BrandPage from "./pages/BrandPage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 
 function App() {
   return (
@@ -23,6 +25,16 @@ function App() {
         <Route
           path="/brand"
           element={<BrandPage />}
+        />
+
+        <Route
+          path="/login"
+          element={<LoginPage />}
+        />
+
+        <Route
+          path="/signup"
+          element={<SignupPage />}
         />
 
         {/* /shop 으로 들어오면 기본 카테고리(스킨)로 이동 */}

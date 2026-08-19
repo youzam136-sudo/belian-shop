@@ -1,0 +1,350 @@
+/* ========================================
+   AUTH (로그인 / 회원가입)
+======================================== */
+
+.auth-page {
+    width: 100%;
+
+    padding: 60px 0 150px;
+
+    background: #fff;
+}
+
+.auth-container {
+    width: min(390px, 88vw);
+
+    margin: 0 auto;
+}
+
+.auth-container h1 {
+    margin: 0 0 20px;
+
+    color: #111;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.auth-sub {
+    margin: 0 0 40px;
+
+    color: #555;
+
+    font-size: 13px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+/* ========================================
+   FORM
+======================================== */
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"],
+.auth-form input[type="tel"] {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    background: #fafafa;
+    color: #222;
+
+    font-size: 14px;
+}
+
+.auth-form input::placeholder {
+    color: #9a9a9a;
+}
+
+.auth-form input:focus {
+    outline: none;
+
+    border-color: var(--brown);
+
+    background: #fff;
+}
+
+/* CHECKBOX */
+
+.auth-checkbox {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 2px 0 4px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.auth-checkbox input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: var(--brown);
+}
+
+.auth-checkbox.is-all {
+    color: #222;
+    font-weight: 600;
+}
+
+.auth-required {
+    color: #d1553c;
+}
+
+/* SUBMIT BUTTON */
+
+.auth-submit {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: 0;
+    border-radius: 4px;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s var(--ease-premium-soft);
+}
+
+.auth-submit:hover {
+    opacity: 0.9;
+}
+
+/* ========================================
+   LOGIN - LINKS ROW
+======================================== */
+
+.auth-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 20px 0 50px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.auth-links a {
+    color: #777;
+
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    color: #222;
+}
+
+.auth-links-divider {
+    color: #ddd;
+}
+
+/* ========================================
+   LOGIN - SNS
+======================================== */
+
+.auth-sns h2 {
+    margin: 0 0 18px;
+
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.auth-sns-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+    height: 50px;
+
+    margin-bottom: 10px;
+
+    border: 0;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s var(--ease-premium-soft);
+}
+
+.auth-sns-btn:hover {
+    opacity: 0.9;
+}
+
+.auth-sns-btn img {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 4px;
+}
+
+.auth-sns-btn.is-naver {
+    background: #03c75a;
+    color: #fff;
+}
+
+.auth-sns-btn.is-kakao {
+    background: #fee500;
+    color: #191600;
+}
+
+/* ========================================
+   SIGNUP - PHONE VERIFY
+======================================== */
+
+.auth-phone-block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+.auth-phone-label {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    color: #222;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.auth-phone-note {
+    color: #999;
+
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.auth-phone-verify {
+    display: flex;
+
+    gap: 8px;
+}
+
+.auth-phone-verify input {
+    flex: 1;
+    min-width: 0;
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    background: #fafafa;
+
+    font-size: 13px;
+}
+
+.auth-phone-verify button {
+    flex-shrink: 0;
+
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 4px;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   SIGNUP - AGREEMENTS
+======================================== */
+
+.auth-agree-block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 10px 0 6px;
+
+    padding: 16px;
+
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+    background: #fafafa;
+}
+
+.auth-agree-block .auth-checkbox {
+    margin: 0;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .auth-page {
+        padding: 40px 0 90px;
+    }
+
+    .auth-container {
+        width: 88%;
+    }
+
+    .auth-container h1 {
+        font-size: 22px;
+    }
+
+    .auth-sub {
+        margin-bottom: 32px;
+
+        font-size: 12px;
+    }
+}
