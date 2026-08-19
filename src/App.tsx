@@ -12,6 +12,7 @@ import ShopPage from "./pages/ShopPage";
 import BrandPage from "./pages/BrandPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 function App() {
   return (
@@ -47,6 +48,12 @@ function App() {
         <Route
           path="/shop/:categoryId"
           element={<ShopPage />}
+        />
+
+        {/* 상품 상세: /product/1, /product/305 등 */}
+        <Route
+          path="/product/:productId"
+          element={<ProductDetailPage />}
         />
 
         <Route
