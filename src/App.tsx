@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
 import ShopPage from "./pages/ShopPage";
+import BrandPage from "./pages/BrandPage";
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
         <Route
           path="/"
           element={<HomePage />}
+        />
+
+        <Route
+          path="/brand"
+          element={<BrandPage />}
         />
 
         <Route
