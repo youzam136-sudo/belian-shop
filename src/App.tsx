@@ -2,6 +2,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate,
 } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
@@ -24,8 +25,15 @@ function App() {
           element={<BrandPage />}
         />
 
+        {/* /shop 으로 들어오면 기본 카테고리(스킨)로 이동 */}
         <Route
           path="/shop"
+          element={<Navigate to="/shop/skin" replace />}
+        />
+
+        {/* 카테고리별 실제 URL: /shop/skin, /shop/serum, /shop/mask 등 */}
+        <Route
+          path="/shop/:categoryId"
           element={<ShopPage />}
         />
 

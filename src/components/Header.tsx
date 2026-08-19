@@ -57,10 +57,10 @@ function Header() {
                         </Link>
 
                         <div className="header-submenu">
-                            <Link to="/">스킨</Link>
-                            <Link to="/">크림</Link>
-                            <Link to="/">폼클렌징</Link>
-                            <Link to="/">기타</Link>
+                            <Link to="/shop/skin">스킨</Link>
+                            <Link to="/shop/cream">크림</Link>
+                            <Link to="/shop/cleanser">폼클렌징</Link>
+                            <Link to="/shop/etc">기타</Link>
                         </div>
                     </div>
 
@@ -176,19 +176,19 @@ function Header() {
                             className={`mobile-submenu ${shopOpen ? "is-open" : ""
                                 }`}
                         >
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/shop/skin" onClick={closeMobileMenu}>
                                 스킨
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/shop/cream" onClick={closeMobileMenu}>
                                 크림
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/shop/cleanser" onClick={closeMobileMenu}>
                                 폼클렌징
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/shop/etc" onClick={closeMobileMenu}>
                                 기타
                             </Link>
                         </div>
