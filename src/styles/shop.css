@@ -431,3 +431,152 @@
     }
 
 }
+
+/* ========================================
+   PRODUCT CARD - EXTRA VARIANTS
+   (원형 % 배지 스타일 / 장바구니 아이콘 스타일)
+======================================== */
+
+.shop-product-image {
+    position: relative;
+}
+
+/* 세럼 / 클렌저: 이미지 위 원형 할인율 배지 */
+
+.shop-product-discount-badge {
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.shop-product-price-badge {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-top: 6px;
+}
+
+.shop-product-price-original {
+    color: #aaa;
+
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+.shop-product-price-sale {
+    color: #111;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* 마스크팩 / 선케어: 이미지 위 장바구니 버튼 */
+
+.shop-product-cart-btn {
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    background: #fff;
+    color: #333;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s var(--ease-premium);
+}
+
+.shop-product-card:hover .shop-product-cart-btn {
+    transform: scale(1.08);
+}
+
+.shop-product-price-cart {
+    display: flex;
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin-top: 6px;
+}
+
+.shop-product-discount-percent {
+    color: #e0562f;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.shop-product-price-cart .shop-product-price-sale {
+    font-size: 17px;
+}
+
+/* =========================================================
+   MOBILE - EXTRA VARIANTS
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .shop-product-discount-badge {
+        right: 8px;
+        bottom: 8px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 11px;
+    }
+
+    .shop-product-cart-btn {
+        right: 8px;
+        bottom: 8px;
+
+        width: 28px;
+        height: 28px;
+    }
+
+    .shop-product-cart-btn svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    .shop-product-price-original {
+        font-size: 11px;
+    }
+
+    .shop-product-price-sale {
+        font-size: 14px;
+    }
+
+    .shop-product-discount-percent {
+        font-size: 12px;
+    }
+}
