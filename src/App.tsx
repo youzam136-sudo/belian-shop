@@ -14,6 +14,7 @@ import BrandPage from "./pages/BrandPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import InquiryBoardPage from "./pages/InquiryBoardPage";
 
 function App() {
   return (
@@ -70,6 +71,11 @@ function App() {
         <Route
           path="/mypage/delivery"
           element={<DeliveryPage />}
+        />
+
+        <Route
+          path="/community/inquiry"
+          element={<InquiryBoardPage />}
         />
       </Routes>
     </BrowserRouter>
