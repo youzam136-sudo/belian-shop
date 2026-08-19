@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../styles/mypage.css";
 
@@ -222,28 +223,48 @@ function MyPage() {
 
                         {/* QUICK MENU */}
                         <div ref={quickRef} className={revealClass("mypage-quick-menu", quickVisible, 1)}>
-                            {quickMenus.map((menu) => (
-                                <button
-                                    type="button"
-                                    className="mypage-quick-item"
-                                    key={menu.id}
-                                >
-                                    <span className="mypage-quick-icon">
-                                        <img src={menu.icon} alt={menu.title} />
-                                    </span>
-
-                                    <strong>
-                                        {menu.title}
-                                    </strong>
-
-                                    <span
-                                        className="mypage-quick-value"
-                                        style={{ visibility: menu.value ? "visible" : "hidden" }}
+                            {quickMenus.map((menu) =>
+                                menu.id === 1 ? (
+                                    <Link
+                                        to="/mypage/delivery"
+                                        className="mypage-quick-item"
+                                        key={menu.id}
                                     >
-                                        {menu.value || "0"}
-                                    </span>
-                                </button>
-                            ))}
+                                        <span className="mypage-quick-icon">
+                                            <img src={menu.icon} alt={menu.title} />
+                                        </span>
+
+                                        <strong>
+                                            {menu.title}
+                                        </strong>
+
+                                        <span className="mypage-quick-value">
+                                            {menu.value}
+                                        </span>
+                                    </Link>
+                                ) : (
+                                    <button
+                                        type="button"
+                                        className="mypage-quick-item"
+                                        key={menu.id}
+                                    >
+                                        <span className="mypage-quick-icon">
+                                            <img src={menu.icon} alt={menu.title} />
+                                        </span>
+
+                                        <strong>
+                                            {menu.title}
+                                        </strong>
+
+                                        <span
+                                            className="mypage-quick-value"
+                                            style={{ visibility: menu.value ? "visible" : "hidden" }}
+                                        >
+                                            {menu.value || "0"}
+                                        </span>
+                                    </button>
+                                ),
+                            )}
                         </div>
 
                         {/* ORDER HISTORY */}
