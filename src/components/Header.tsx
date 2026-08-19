@@ -47,7 +47,7 @@ function Header() {
             PC LEFT
         ========================= */}
                 <nav className="header-left">
-                    <Link to="/">
+                    <Link to="/brand">
                         브랜드소개
                     </Link>
 
@@ -146,7 +146,7 @@ function Header() {
                 <div className="mobile-menu-inner">
 
                     <Link
-                        to="/"
+                        to="/brand"
                         className="mobile-main-link"
                         onClick={closeMobileMenu}
                     >
