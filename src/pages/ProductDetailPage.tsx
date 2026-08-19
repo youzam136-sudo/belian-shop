@@ -42,6 +42,12 @@ function ProductDetailPage() {
 
     const sizes = product ? getProductSizes(product) : [];
 
+    // 상품 이미지 목록 (지금은 같은 사진을 재사용하지만,
+    // 나중에 상품별 사진을 여러 장 추가하면 여기 배열만 바꾸면 된다)
+    const images = [productImage, productImage];
+
+    const [activeImage, setActiveImage] = useState(0);
+
     // 기본은 두번째 옵션(115ml)이 선택된 상태로 시작한다.
     const [sizeIndex, setSizeIndex] = useState(
         sizes.length > 1 ? 1 : 0,
@@ -76,17 +82,22 @@ function ProductDetailPage() {
                     {/* IMAGES */}
                     <div className="product-detail-gallery">
                         <div className="product-detail-main-image">
-                            <img src={productImage} alt={product.name} />
+                            <img src={images[activeImage]} alt={product.name} />
                         </div>
 
                         <div className="product-detail-thumbs">
-                            <button type="button" className="is-active">
-                                <img src={productImage} alt="" />
-                            </button>
-
-                            <button type="button">
-                                <img src={productImage} alt="" />
-                            </button>
+                            {images.map((image, index) => (
+                                <button
+                                    key={index}
+                                    type="button"
+                                    className={
+                                        index === activeImage ? "is-active" : ""
+                                    }
+                                    onClick={() => setActiveImage(index)}
+                                >
+                                    <img src={image} alt="" />
+                                </button>
+                            ))}
                         </div>
                     </div>
 
