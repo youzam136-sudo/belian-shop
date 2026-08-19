@@ -71,7 +71,7 @@ function Header() {
 
                         <div className="header-submenu">
                             <Link to="/">공지사항</Link>
-                            <Link to="/">상품문의</Link>
+                            <Link to="/community/inquiry">상품문의</Link>
                             <Link to="/">이벤트</Link>
                         </div>
                     </div>
@@ -221,7 +221,7 @@ function Header() {
                                 공지사항
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/community/inquiry" onClick={closeMobileMenu}>
                                 상품문의
                             </Link>
 
