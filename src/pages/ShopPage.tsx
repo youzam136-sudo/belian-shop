@@ -95,6 +95,37 @@ const skinProducts: ShopProduct[] = Array.from(
     }),
 );
 
+// 로션 / 크림 / 기타: 스킨과 동일한 NEW 배지 스타일
+const newBadgeProducts: ShopProduct[] = [
+    ...Array.from({ length: 8 }, (_, index) => ({
+        id: 500 + index + 1,
+        name: "로션 제품",
+        description:
+            "촉촉하게 스며드는 데일리 로션!",
+        price: 5200,
+        badge: "NEW",
+        category: "lotion",
+    })),
+    ...Array.from({ length: 8 }, (_, index) => ({
+        id: 600 + index + 1,
+        name: "크림 제품",
+        description:
+            "깊은 영양과 보습을 채워주는 크림!",
+        price: 6800,
+        badge: "NEW",
+        category: "cream",
+    })),
+    ...Array.from({ length: 8 }, (_, index) => ({
+        id: 700 + index + 1,
+        name: "기타 제품",
+        description:
+            "매일 부담 없이 사용할 수 있는 데일리 케어!",
+        price: 4900,
+        badge: "NEW",
+        category: "etc",
+    })),
+];
+
 // 세럼 / 클렌저: 원형 "50%" 배지 + 원가 취소선 스타일
 const badgeVariantProducts: ShopProduct[] = [
     ...Array.from({ length: 8 }, (_, index) => ({
@@ -143,6 +174,7 @@ const cartVariantProducts: ShopProduct[] = [
 
 const products: ShopProduct[] = [
     ...skinProducts,
+    ...newBadgeProducts,
     ...badgeVariantProducts,
     ...cartVariantProducts,
 ];
