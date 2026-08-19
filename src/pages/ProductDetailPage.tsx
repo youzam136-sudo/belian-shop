@@ -82,7 +82,11 @@ function ProductDetailPage() {
                     {/* IMAGES */}
                     <div className="product-detail-gallery">
                         <div className="product-detail-main-image">
-                            <img src={images[activeImage]} alt={product.name} />
+                            <img
+                                key={activeImage}
+                                src={images[activeImage]}
+                                alt={product.name}
+                            />
                         </div>
 
                         <div className="product-detail-thumbs">
