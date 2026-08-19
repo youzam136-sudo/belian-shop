@@ -8,6 +8,7 @@ import {
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
+import DeliveryPage from "./pages/DeliveryPage";
 import ShopPage from "./pages/ShopPage";
 import BrandPage from "./pages/BrandPage";
 import LoginPage from "./pages/LoginPage";
@@ -64,6 +65,11 @@ function App() {
         <Route
           path="/mypage"
           element={<MyPage />}
+        />
+
+        <Route
+          path="/mypage/delivery"
+          element={<DeliveryPage />}
         />
       </Routes>
     </BrowserRouter>
