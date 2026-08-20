@@ -5,10 +5,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
-import eventHero from "../assets/event/event-hero.jpg";
-import eventImg1 from "../assets/event/event-1.jpg";
-import eventImg2 from "../assets/event/event-2.jpg";
-import eventImg3 from "../assets/event/event-3.jpg";
+import eventHero from "../assets/event-hero.jpg";
+import eventImg1 from "../assets/event-1.jpg";
+import eventImg2 from "../assets/event-2.jpg";
+import eventImg3 from "../assets/event-3.jpg";
 
 type EventItem = {
     id: number;
