@@ -15,6 +15,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import InquiryBoardPage from "./pages/InquiryBoardPage";
+import EventPage from "./pages/EventPage";
 
 function App() {
   return (
@@ -76,6 +77,11 @@ function App() {
         <Route
           path="/community/inquiry"
           element={<InquiryBoardPage />}
+        />
+
+        <Route
+          path="/community/event"
+          element={<EventPage />}
         />
       </Routes>
     </BrowserRouter>
