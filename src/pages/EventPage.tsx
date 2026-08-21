@@ -17,11 +17,11 @@ type EventItem = {
     description: string;
 };
 
-// 실제로는 페이지당 3개씩, 총 5페이지 분량(15개)이 있다고 가정하고
-// 지금은 준비된 사진 3장을 돌려가며 채운다.
+// 실제 데이터는 6개(2페이지 분량)만 채우고,
+// 나머지 3~5페이지는 게시물이 없는 빈 상태로 둔다.
 const baseImages = [eventImg1, eventImg2, eventImg3];
 
-const allEvents: EventItem[] = Array.from({ length: 15 }, (_, index) => ({
+const allEvents: EventItem[] = Array.from({ length: 6 }, (_, index) => ({
     id: index + 1,
     image: baseImages[index % baseImages.length],
     title: "이벤트명",
@@ -29,7 +29,10 @@ const allEvents: EventItem[] = Array.from({ length: 15 }, (_, index) => ({
 }));
 
 const PAGE_SIZE = 3;
-const totalPages = Math.ceil(allEvents.length / PAGE_SIZE);
+
+// 페이지 번호는 디자인대로 5개까지 항상 보여준다.
+// (실제 게시물은 1~2페이지에만 존재하고 3~5페이지는 비어있다)
+const totalPages = 5;
 
 function EventCard({ event, delay }: { event: EventItem; delay?: 1 | 2 | 3 | 4 }) {
     const { ref, isVisible } = useReveal<HTMLElement>();
@@ -96,15 +99,21 @@ function EventPage() {
                 </div>
 
                 {/* GRID */}
-                <div className="event-grid">
-                    {pageItems.map((event, index) => (
-                        <EventCard
-                            key={event.id}
-                            event={event}
-                            delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
-                        />
-                    ))}
-                </div>
+                {pageItems.length > 0 ? (
+                    <div className="event-grid">
+                        {pageItems.map((event, index) => (
+                            <EventCard
+                                key={event.id}
+                                event={event}
+                                delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="event-empty">
+                        등록된 게시물이 없습니다.
+                    </div>
+                )}
 
                 {/* PAGINATION */}
                 <nav className="event-pagination">
