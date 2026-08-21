@@ -70,7 +70,7 @@ function Header() {
                         </Link>
 
                         <div className="header-submenu">
-                            <Link to="/">공지사항</Link>
+                            <Link to="/community/notice">공지사항</Link>
                             <Link to="/community/inquiry">상품문의</Link>
                             <Link to="/community/event">이벤트</Link>
                         </div>
@@ -217,7 +217,7 @@ function Header() {
                             className={`mobile-submenu ${communityOpen ? "is-open" : ""
                                 }`}
                         >
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/community/notice" onClick={closeMobileMenu}>
                                 공지사항
                             </Link>
 
