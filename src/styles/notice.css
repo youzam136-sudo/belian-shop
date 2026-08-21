@@ -1,0 +1,394 @@
+/* ========================================
+   공지사항 페이지
+======================================== */
+
+.notice-page {
+    width: 100%;
+
+    padding-bottom: 150px;
+
+    background: #fff;
+}
+
+/* ========================================
+   VERSION TABS (버전1 / 버전2)
+======================================== */
+
+.notice-version-tabs {
+    display: flex;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.notice-version-tabs button {
+    padding: 6px 18px;
+
+    border: 1px solid #ddd;
+    border-radius: 999px;
+
+    background: #fff;
+    color: #777;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s var(--ease-premium-soft);
+}
+
+.notice-version-tabs button.is-active {
+    border-color: var(--brown);
+
+    background: var(--brown);
+    color: #fff;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.notice-hero {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 420px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.notice-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 20, 20, 0.12);
+}
+
+.notice-hero-inner {
+    position: relative;
+    z-index: 1;
+
+    width: var(--page-width);
+
+    margin: 0 auto;
+}
+
+.notice-hero-inner h1 {
+    margin: 0 0 14px;
+
+    max-width: 560px;
+
+    color: #fff;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.notice-hero-inner p {
+    margin: 0;
+
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.notice-heading {
+    margin: 70px 0 40px;
+
+    width: var(--page-width);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notice-heading h2 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* ========================================
+   LIST WRAP
+======================================== */
+
+.notice-list-wrap {
+    width: var(--page-width);
+
+    margin: 0 auto;
+}
+
+.notice-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 200px;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+/* ========================================
+   버전1: 심플 리스트
+======================================== */
+
+.notice-list-v1 {
+    border-top: 1px solid #333;
+}
+
+.notice-row-v1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 4px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.notice-row-v1-title {
+    color: #222;
+
+    font-size: 15px;
+}
+
+.notice-row-v1-meta {
+    color: #999;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+}
+
+/* ========================================
+   버전2: 번호 + 본문 + Read More
+======================================== */
+
+.notice-list-v2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.notice-row-v2 {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 26px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.notice-row-v2-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid #ccc;
+    border-radius: 50%;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.notice-row-v2-body h3 {
+    margin: 0 0 8px;
+
+    color: #111;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.notice-row-v2-body p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.notice-row-v2-more {
+    align-self: center;
+
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.notice-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 60px;
+}
+
+.notice-pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 30px;
+    height: 30px;
+
+    border: 0;
+
+    background: none;
+    color: #999;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.notice-pagination button.is-active {
+    color: #111;
+    font-weight: 700;
+}
+
+.notice-pagination button:disabled {
+    opacity: 0.35;
+
+    cursor: default;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .notice-hero {
+        height: 260px;
+    }
+
+    .notice-hero-inner {
+        width: 88%;
+    }
+
+    .notice-hero-inner h1 {
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .notice-hero-inner p {
+        font-size: 12px;
+    }
+
+    .notice-heading {
+        margin: 40px 0 26px;
+
+        width: 88%;
+    }
+
+    .notice-heading h2 {
+        font-size: 19px;
+    }
+
+    .notice-list-wrap {
+        width: 88%;
+    }
+
+    .notice-row-v1 {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 6px;
+
+        padding: 16px 2px;
+    }
+
+    .notice-row-v1-title {
+        font-size: 13px;
+    }
+
+    .notice-row-v1-meta {
+        font-size: 11px;
+    }
+
+    .notice-row-v2 {
+        grid-template-columns: 26px 1fr;
+
+        gap: 12px;
+
+        padding: 18px 0;
+    }
+
+    .notice-row-v2-num {
+        width: 24px;
+        height: 24px;
+
+        font-size: 11px;
+    }
+
+    .notice-row-v2-body h3 {
+        font-size: 14px;
+    }
+
+    .notice-row-v2-body p {
+        font-size: 12px;
+    }
+
+    .notice-row-v2-more {
+        grid-column: 2;
+
+        margin-top: 8px;
+
+        text-align: left;
+    }
+
+    .notice-pagination {
+        margin-top: 35px;
+    }
+}
