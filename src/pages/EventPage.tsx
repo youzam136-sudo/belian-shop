@@ -65,7 +65,6 @@ function EventPage() {
     const goToPage = (next: number) => {
         const clamped = Math.min(Math.max(next, 1), totalPages);
         setPage(clamped);
-        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (
