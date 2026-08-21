@@ -16,6 +16,7 @@ import SignupPage from "./pages/SignupPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import InquiryBoardPage from "./pages/InquiryBoardPage";
 import EventPage from "./pages/EventPage";
+import NoticePage from "./pages/NoticePage";
 
 function App() {
   return (
@@ -82,6 +83,11 @@ function App() {
         <Route
           path="/community/event"
           element={<EventPage />}
+        />
+
+        <Route
+          path="/community/notice"
+          element={<NoticePage />}
         />
       </Routes>
     </BrowserRouter>
