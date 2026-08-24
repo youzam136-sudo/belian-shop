@@ -63,7 +63,6 @@ const writtenReviews: WrittenReview[] = [
     },
 ];
 
-const PAGE_SIZE = 2;
 const totalPages = 3;
 
 const quickMenus = [
