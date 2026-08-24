@@ -137,7 +137,6 @@ function RecentViewedPage() {
 
                         <nav>
                             <Link to="/mypage">마이페이지</Link>
-                            <a href="#">쇼핑정보</a>
                             <Link to="/mypage/refund">취소/환불 내역</Link>
                             <Link to="/mypage/recent" className="active">최근 본 상품</Link>
                             <a href="#">리뷰 작성</a>
