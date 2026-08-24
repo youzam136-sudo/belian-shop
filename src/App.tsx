@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
 import DeliveryPage from "./pages/DeliveryPage";
+import RefundPage from "./pages/RefundPage";
+import RecentViewedPage from "./pages/RecentViewedPage";
 import ShopPage from "./pages/ShopPage";
 import BrandPage from "./pages/BrandPage";
 import LoginPage from "./pages/LoginPage";
@@ -85,6 +87,16 @@ function App() {
         <Route
           path="/mypage/delivery"
           element={<DeliveryPage />}
+        />
+
+        <Route
+          path="/mypage/refund"
+          element={<RefundPage />}
+        />
+
+        <Route
+          path="/mypage/recent"
+          element={<RecentViewedPage />}
         />
 
         <Route
