@@ -13,6 +13,8 @@ import ShopPage from "./pages/ShopPage";
 import BrandPage from "./pages/BrandPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import FindIdPage from "./pages/FindIdPage";
+import FindPasswordPage from "./pages/FindPasswordPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import InquiryBoardPage from "./pages/InquiryBoardPage";
 import EventPage from "./pages/EventPage";
@@ -40,6 +42,16 @@ function App() {
         <Route
           path="/signup"
           element={<SignupPage />}
+        />
+
+        <Route
+          path="/find-id"
+          element={<FindIdPage />}
+        />
+
+        <Route
+          path="/find-password"
+          element={<FindPasswordPage />}
         />
 
         {/* /shop 으로 들어오면 기본 카테고리(스킨)로 이동 */}
