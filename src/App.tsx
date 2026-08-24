@@ -21,6 +21,8 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import InquiryBoardPage from "./pages/InquiryBoardPage";
 import EventPage from "./pages/EventPage";
 import NoticePage from "./pages/NoticePage";
+import ReviewPage from "./pages/ReviewPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   return (
@@ -97,6 +99,16 @@ function App() {
         <Route
           path="/mypage/recent"
           element={<RecentViewedPage />}
+        />
+
+        <Route
+          path="/mypage/review"
+          element={<ReviewPage />}
+        />
+
+        <Route
+          path="/checkout"
+          element={<CheckoutPage />}
         />
 
         <Route
