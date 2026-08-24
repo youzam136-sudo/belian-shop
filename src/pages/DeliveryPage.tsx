@@ -175,10 +175,6 @@ function DeliveryPage() {
                                 마이페이지
                             </Link>
 
-                            <a href="#">
-                                쇼핑정보
-                            </a>
-
                             <Link to="/mypage/refund">
                                 취소/환불 내역
                             </Link>
