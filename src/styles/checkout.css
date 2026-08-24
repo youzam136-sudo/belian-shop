@@ -1,0 +1,483 @@
+/* ========================================
+   결제하기 (주문서)
+======================================== */
+
+.checkout-page {
+    width: 100%;
+
+    padding: 50px 0 150px;
+
+    background: #fafafa;
+}
+
+.checkout-container {
+    width: min(720px, 90vw);
+
+    margin: 0 auto;
+}
+
+.checkout-container > h1 {
+    margin: 0 0 30px;
+
+    color: #111;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+.checkout-section {
+    margin-bottom: 16px;
+    padding: 24px;
+
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.checkout-section h2 {
+    margin: 0 0 18px;
+
+    color: #111;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.checkout-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.checkout-section-head h2 {
+    margin: 0;
+}
+
+.checkout-link-btn {
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: var(--brown);
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+/* 주문 상품 */
+
+.checkout-order-item {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item-image {
+    width: 64px;
+    height: 64px;
+
+    overflow: hidden;
+
+    background: #eee;
+}
+
+.checkout-item-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.checkout-item-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.checkout-item-info h3 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.checkout-item-info span {
+    color: #999;
+
+    font-size: 12px;
+}
+
+.checkout-item-amount {
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.checkout-order-total {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 14px;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+.checkout-order-total strong {
+    color: #111;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* FIELD */
+
+.checkout-field {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+}
+
+.checkout-field:last-child {
+    margin-bottom: 0;
+}
+
+.checkout-field > span {
+    color: #777;
+
+    font-size: 13px;
+}
+
+.checkout-field input,
+.checkout-field select {
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fafafa;
+    color: #222;
+
+    font-size: 13px;
+}
+
+.checkout-static {
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 포인트 */
+
+.checkout-point-row {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+}
+
+.checkout-point-row input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+
+    padding: 0 12px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    font-size: 13px;
+}
+
+.checkout-point-row button {
+    flex-shrink: 0;
+
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #333;
+    color: #fff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.checkout-note {
+    margin: 0;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+/* 최종 결제 금액 */
+
+.checkout-summary-row {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: #666;
+
+    font-size: 13px;
+}
+
+.checkout-summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 14px;
+    padding-top: 14px;
+
+    border-top: 1px solid #eee;
+
+    color: #111;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.checkout-summary-total strong {
+    color: #d1553c;
+
+    font-size: 20px;
+}
+
+/* 결제수단 */
+
+.checkout-payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.checkout-payment-methods button {
+    height: 46px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fff;
+    color: #555;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.checkout-payment-methods button.is-selected {
+    border: 2px solid #111;
+
+    color: #111;
+}
+
+/* 약관 동의 */
+
+.checkout-agree-block {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.checkout-checkbox {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: #555;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.checkout-checkbox input {
+    width: 16px;
+    height: 16px;
+
+    accent-color: var(--brown);
+}
+
+.checkout-checkbox.is-all {
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #222;
+    font-weight: 700;
+}
+
+.checkout-required {
+    color: #d1553c;
+}
+
+/* 결제하기 버튼 */
+
+.checkout-pay-btn {
+    width: 100%;
+    height: 56px;
+
+    margin-top: 8px;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s var(--ease-premium-soft);
+}
+
+.checkout-pay-btn:disabled {
+    background: #ccc;
+
+    cursor: not-allowed;
+}
+
+.checkout-pay-btn:not(:disabled):hover {
+    opacity: 0.9;
+}
+
+/* ========================================
+   완료 화면
+======================================== */
+
+.checkout-complete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 100px 20px;
+
+    text-align: center;
+}
+
+.checkout-complete h1 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.checkout-complete p {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.checkout-complete-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.checkout-complete-actions button {
+    padding: 12px 24px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fff;
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.checkout-complete-actions button.is-primary {
+    border: 0;
+
+    background: #111;
+    color: #fff;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .checkout-page {
+        padding: 30px 0 90px;
+    }
+
+    .checkout-container {
+        width: 92%;
+    }
+
+    .checkout-section {
+        padding: 16px;
+    }
+
+    .checkout-field {
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+    }
+
+    .checkout-payment-methods {
+        grid-template-columns: 1fr;
+    }
+}
