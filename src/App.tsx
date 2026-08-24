@@ -22,6 +22,7 @@ import InquiryBoardPage from "./pages/InquiryBoardPage";
 import EventPage from "./pages/EventPage";
 import NoticePage from "./pages/NoticePage";
 import ReviewPage from "./pages/ReviewPage";
+import CouponPage from "./pages/CouponPage";
 import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
@@ -104,6 +105,11 @@ function App() {
         <Route
           path="/mypage/review"
           element={<ReviewPage />}
+        />
+
+        <Route
+          path="/mypage/coupon"
+          element={<CouponPage />}
         />
 
         <Route
