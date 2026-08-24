@@ -32,7 +32,7 @@ type AvailableCoupon = {
     dateRange: string;
 };
 
-const heldCoupons: HeldCoupon[] = [
+const initialHeldCoupons: HeldCoupon[] = [
     {
         id: 1,
         percent: 35,
@@ -95,9 +95,28 @@ function CouponPage() {
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [downloaded, setDownloaded] = useState<number[]>([]);
+    const [heldCoupons, setHeldCoupons] = useState<HeldCoupon[]>(initialHeldCoupons);
 
     const handleDownload = (id: number) => {
-        setDownloaded((prev) => (prev.includes(id) ? prev : [...prev, id]));
+        if (downloaded.includes(id)) return;
+
+        setDownloaded((prev) => [...prev, id]);
+
+        const target = availableCoupons.find((coupon) => coupon.id === id);
+
+        if (target) {
+            setHeldCoupons((prev) => [
+                ...prev,
+                {
+                    id: 1000 + target.id,
+                    percent: target.percent,
+                    title: target.title,
+                    description: target.description,
+                    condition: target.condition,
+                    expiry: target.dateRange,
+                },
+            ]);
+        }
     };
 
     return (
@@ -157,130 +176,3 @@ function CouponPage() {
 
                                 <div className="coupon-hero-amount">
                                     <span>20%</span>
-                                    <small>ONETWO</small>
-                                </div>
-                            </div>
-
-                            {/* TOOLBAR */}
-                            <div className="coupon-toolbar">
-                                <span className="coupon-sort">할인율 높은순 ▾</span>
-
-                                <button type="button" className="coupon-register-btn">
-                                    + 쿠폰 등록
-                                </button>
-                            </div>
-
-                            {/* HELD COUPONS */}
-                            {heldCoupons.length > 0 ? (
-                                <div className="coupon-list">
-                                    {heldCoupons.map((coupon) => (
-                                        <div className="coupon-card" key={coupon.id}>
-                                            <span className="coupon-percent">
-                                                {coupon.percent}%
-                                            </span>
-
-                                            <h4>{coupon.title}</h4>
-                                            <p>{coupon.description}</p>
-
-                                            <span className="coupon-condition">
-                                                {coupon.condition}
-                                            </span>
-
-                                            <span className="coupon-expiry">
-                                                {coupon.expiry}
-                                            </span>
-
-                                            <button type="button" className="coupon-apply-btn">
-                                                적용 상품 보기
-                                            </button>
-                                        </div>
-                                    ))}
-                                </div>
-                            ) : (
-                                <div className="coupon-empty">
-                                    보유하신 쿠폰이 없습니다.
-                                </div>
-                            )}
-
-                            <button
-                                type="button"
-                                className="coupon-more-btn"
-                                onClick={() => setDrawerOpen(true)}
-                            >
-                                받을 수 있는 쿠폰 보기
-                            </button>
-                        </div>
-
-                    </section>
-                </div>
-            </main>
-
-            <Footer />
-
-            {/* ===== 오른쪽에서 나오는 "받을 수 있는 쿠폰" 패널 ===== */}
-            <div
-                className={`coupon-drawer-overlay${drawerOpen ? " is-open" : ""}`}
-                onClick={() => setDrawerOpen(false)}
-            />
-
-            <aside className={`coupon-drawer${drawerOpen ? " is-open" : ""}`}>
-                <div className="coupon-drawer-head">
-                    <h3>받을 수 있는 쿠폰</h3>
-
-                    <button
-                        type="button"
-                        className="coupon-drawer-close"
-                        onClick={() => setDrawerOpen(false)}
-                        aria-label="닫기"
-                    >
-                        ×
-                    </button>
-                </div>
-
-                <div className="coupon-drawer-filters">
-                    <button type="button" className="is-active">할인율 높은순</button>
-                    <button type="button">최소 주문금액 낮은순</button>
-                </div>
-
-                <div className="coupon-drawer-list">
-                    {availableCoupons.map((coupon) => {
-                        const isDownloaded = downloaded.includes(coupon.id);
-
-                        return (
-                            <div className="coupon-drawer-card" key={coupon.id}>
-                                <div className="coupon-drawer-card-body">
-                                    <span className="coupon-drawer-percent">
-                                        {coupon.percent}%
-                                    </span>
-
-                                    <h4>{coupon.title}</h4>
-                                    <p>{coupon.description}</p>
-
-                                    <span className="coupon-condition">
-                                        {coupon.condition}
-                                    </span>
-
-                                    <span className="coupon-expiry">
-                                        {coupon.dateRange}
-                                    </span>
-                                </div>
-
-                                <button
-                                    type="button"
-                                    className={`coupon-download-btn${isDownloaded ? " is-downloaded" : ""}`}
-                                    onClick={() => handleDownload(coupon.id)}
-                                    disabled={isDownloaded}
-                                    aria-label="쿠폰 받기"
-                                >
-                                    <DownloadIcon />
-                                </button>
-                            </div>
-                        );
-                    })}
-                </div>
-            </aside>
-        </>
-    );
-}
-
-export default CouponPage;
