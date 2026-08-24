@@ -1,0 +1,483 @@
+/* ========================================
+   나의 쿠폰
+======================================== */
+
+.coupon-section {
+    margin-top: 42px;
+}
+
+.coupon-section > h2 {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* HERO BANNER */
+
+.coupon-hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 28px 30px;
+
+    margin-bottom: 20px;
+
+    border-radius: 14px;
+
+    background: linear-gradient(120deg, #f4e8dd, #e8cdb4);
+}
+
+.coupon-hero-text h3 {
+    margin: 0 0 8px;
+
+    color: #4a3527;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.coupon-hero-text p {
+    margin: 0;
+
+    color: #7a5c44;
+
+    font-size: 13px;
+}
+
+.coupon-hero-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    height: 68px;
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+.coupon-hero-amount span {
+    color: var(--brown);
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.coupon-hero-amount small {
+    margin-top: 2px;
+
+    color: #b79172;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+/* TOOLBAR */
+
+.coupon-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.coupon-sort {
+    color: #666;
+
+    font-size: 13px;
+}
+
+.coupon-register-btn {
+    padding: 8px 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fff;
+    color: #555;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* HELD COUPON LIST */
+
+.coupon-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.coupon-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 140px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid #eee;
+    border-radius: 12px;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+.coupon-card {
+    position: relative;
+
+    padding: 20px 22px;
+
+    border: 1px solid #eee;
+    border-radius: 12px;
+
+    background: #fff;
+}
+
+.coupon-percent {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--brown);
+
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.coupon-card h4 {
+    margin: 0 0 6px;
+
+    color: #111;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.coupon-card p {
+    margin: 0 0 10px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.coupon-condition {
+    display: block;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+.coupon-expiry {
+    display: block;
+
+    margin-top: 4px;
+    margin-bottom: 14px;
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+.coupon-apply-btn {
+    width: 100%;
+    height: 42px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fafafa;
+    color: #333;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* MORE BUTTON */
+
+.coupon-more-btn {
+    width: 100%;
+    height: 48px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: #fff;
+    color: #333;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s var(--ease-premium-soft);
+}
+
+.coupon-more-btn:hover {
+    background: #f7f2ee;
+}
+
+/* ========================================
+   오른쪽 슬라이드 패널 (받을 수 있는 쿠폰)
+======================================== */
+
+.coupon-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s var(--ease-premium-soft);
+}
+
+.coupon-drawer-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.coupon-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 201;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(420px, 90vw);
+    height: 100%;
+
+    background: #fff;
+
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+
+    transform: translateX(100%);
+
+    transition: transform 0.35s var(--ease-premium);
+}
+
+.coupon-drawer.is-open {
+    transform: translateX(0);
+}
+
+.coupon-drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.coupon-drawer-head h3 {
+    margin: 0;
+
+    color: #111;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.coupon-drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+
+    background: none;
+    color: #777;
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.coupon-drawer-filters {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 16px 24px;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.coupon-drawer-filters button {
+    padding: 7px 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 999px;
+
+    background: #fff;
+    color: #777;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.coupon-drawer-filters button.is-active {
+    border-color: #333;
+
+    background: #333;
+    color: #fff;
+}
+
+.coupon-drawer-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 20px 24px;
+
+    overflow-y: auto;
+}
+
+.coupon-drawer-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.coupon-drawer-card:last-child {
+    border-bottom: 0;
+}
+
+.coupon-drawer-percent {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--brown);
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.coupon-drawer-card h4 {
+    margin: 0 0 6px;
+
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.coupon-drawer-card p {
+    margin: 0 0 8px;
+
+    color: #777;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.coupon-download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    background: #fff;
+    color: #555;
+
+    cursor: pointer;
+
+    transition: all 0.2s var(--ease-premium-soft);
+}
+
+.coupon-download-btn:hover {
+    border-color: var(--brown);
+
+    color: var(--brown);
+}
+
+.coupon-download-btn.is-downloaded {
+    border-color: var(--brown);
+
+    background: var(--brown);
+    color: #fff;
+
+    cursor: default;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .coupon-section {
+        margin-top: 30px;
+    }
+
+    .coupon-hero-banner {
+        padding: 20px;
+    }
+
+    .coupon-hero-text h3 {
+        font-size: 16px;
+    }
+
+    .coupon-hero-amount {
+        width: 70px;
+        height: 56px;
+    }
+
+    .coupon-hero-amount span {
+        font-size: 16px;
+    }
+
+    .coupon-card {
+        padding: 16px;
+    }
+
+    .coupon-percent {
+        font-size: 22px;
+    }
+
+    .coupon-drawer {
+        width: 100%;
+    }
+}
