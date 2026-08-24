@@ -198,9 +198,13 @@ function MyPage() {
                                 쇼핑정보
                             </a>
 
-                            <a href="#">
+                            <Link to="/mypage/refund">
+                                취소/환불 내역
+                            </Link>
+
+                            <Link to="/mypage/recent">
                                 최근 본 상품
-                            </a>
+                            </Link>
 
                             <a href="#">
                                 리뷰 작성
