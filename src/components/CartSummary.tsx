@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function CartSummary() {
     const { ref, isVisible } = useReveal<HTMLElement>();
+    const navigate = useNavigate();
 
     return (
         <aside ref={ref} className={revealClass("cart-summary", isVisible)}>
@@ -51,6 +53,7 @@ function CartSummary() {
             <button
                 className="checkout-button"
                 type="button"
+                onClick={() => navigate("/checkout")}
             >
                 결제하기
             </button>
