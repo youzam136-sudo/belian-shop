@@ -183,9 +183,9 @@ function DeliveryPage() {
                                 최근 본 상품
                             </Link>
 
-                            <a href="#">
+                            <Link to="/mypage/review">
                                 리뷰 작성
-                            </a>
+                            </Link>
 
                             <a href="#">
                                 나의 쿠폰
