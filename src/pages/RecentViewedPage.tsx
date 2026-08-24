@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/mypage.css";
@@ -18,10 +19,16 @@ import { products, type ShopProduct } from "../data/shopProducts";
 
 // 실제로는 사용자가 최근에 본 상품 id 목록을 저장해뒀다가 불러와야 하지만,
 // 지금은 카테고리별로 몇 개씩 골라서 "최근 본 상품"처럼 보여준다.
-const recentIds = [1, 101, 301, 501, 601, 3, 201, 401];
+const recentIds = [
+    1, 101, 301, 501, 601, 3, 201, 401,
+    102, 302, 502, 602, 5, 203, 403, 7,
+];
 const recentProducts: ShopProduct[] = recentIds
     .map((id) => products.find((product) => product.id === id))
     .filter((product): product is ShopProduct => Boolean(product));
+
+const PAGE_SIZE = 8;
+const totalPages = Math.max(1, Math.ceil(recentProducts.length / PAGE_SIZE));
 
 const quickMenus = [
     { id: 1, icon: iconOrder, title: "주문 배송", value: "보기" },
@@ -123,6 +130,16 @@ function RecentViewedPage() {
     const { ref: sidebarRef, isVisible: sidebarVisible } = useReveal<HTMLElement>();
     const { ref: quickRef, isVisible: quickVisible } = useReveal<HTMLDivElement>();
     const { ref: listRef, isVisible: listVisible } = useReveal<HTMLDivElement>();
+    const [page, setPage] = useState(1);
+
+    const pageItems = recentProducts.slice(
+        (page - 1) * PAGE_SIZE,
+        page * PAGE_SIZE,
+    );
+
+    const goToPage = (next: number) => {
+        setPage(Math.min(Math.max(next, 1), totalPages));
+    };
 
     return (
         <>
@@ -183,7 +200,7 @@ function RecentViewedPage() {
                             <h2>최근 본 상품</h2>
 
                             <div className="shop-product-grid mypage-recent-grid">
-                                {recentProducts.map((product, index) => (
+                                {pageItems.map((product, index) => (
                                     <RecentProductCard
                                         key={product.id}
                                         product={product}
@@ -191,6 +208,41 @@ function RecentViewedPage() {
                                     />
                                 ))}
                             </div>
+
+                            {totalPages > 1 && (
+                                <nav className="recent-pagination">
+                                    <button
+                                        type="button"
+                                        onClick={() => goToPage(page - 1)}
+                                        disabled={page === 1}
+                                        aria-label="이전 페이지"
+                                    >
+                                        ‹
+                                    </button>
+
+                                    {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+                                        (num) => (
+                                            <button
+                                                key={num}
+                                                type="button"
+                                                className={num === page ? "is-active" : ""}
+                                                onClick={() => goToPage(num)}
+                                            >
+                                                {num}
+                                            </button>
+                                        ),
+                                    )}
+
+                                    <button
+                                        type="button"
+                                        onClick={() => goToPage(page + 1)}
+                                        disabled={page === totalPages}
+                                        aria-label="다음 페이지"
+                                    >
+                                        ›
+                                    </button>
+                                </nav>
+                            )}
                         </div>
 
                     </section>
