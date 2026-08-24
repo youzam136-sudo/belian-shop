@@ -61,9 +61,9 @@ function LoginPage() {
                     <div className="auth-links">
                         <Link to="/signup">회원가입</Link>
                         <span className="auth-links-divider">|</span>
-                        <Link to="/">아이디찾기</Link>
+                        <Link to="/find-id">아이디찾기</Link>
                         <span className="auth-links-divider">|</span>
-                        <Link to="/">비밀번호 찾기</Link>
+                        <Link to="/find-password">비밀번호 찾기</Link>
                     </div>
 
                     <div className="auth-sns">
