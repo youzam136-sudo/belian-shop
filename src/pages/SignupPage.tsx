@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/auth.css";
 
 import Header from "../components/Header";
@@ -135,6 +136,12 @@ function SignupPage() {
                             회원가입
                         </button>
                     </form>
+
+                    <div className="auth-links">
+                        <span>이미 계정이 있으신가요?</span>
+                        <span className="auth-links-divider">|</span>
+                        <Link to="/login">로그인</Link>
+                    </div>
 
                 </div>
             </main>
