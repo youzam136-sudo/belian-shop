@@ -148,7 +148,7 @@ function ReviewPage() {
                             <Link to="/mypage/refund">취소/환불 내역</Link>
                             <Link to="/mypage/recent">최근 본 상품</Link>
                             <Link to="/mypage/review" className="active">리뷰 작성</Link>
-                            <a href="#">나의 쿠폰</a>
+                            <Link to="/mypage/coupon">나의 쿠폰</Link>
                             <a href="#">내 정보 관리</a>
                         </nav>
 
