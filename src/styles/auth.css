@@ -171,6 +171,55 @@
 }
 
 /* ========================================
+   FIND ID / FIND PASSWORD - RESULT
+======================================== */
+
+.auth-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 32px 20px;
+
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    background: #fafafa;
+
+    text-align: center;
+}
+
+.auth-result p {
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.auth-result strong {
+    color: #111;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.auth-result-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 4px;
+
+    text-decoration: none;
+}
+
+/* ========================================
    LOGIN - SNS
 ======================================== */
 
