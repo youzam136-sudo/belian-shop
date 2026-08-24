@@ -154,3 +154,33 @@
         padding-top: 12px;
     }
 }
+
+/* ========================================
+   마이페이지 메인 - 취소/환불 미리보기 헤더
+======================================== */
+
+.refund-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.refund-section-head h2 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.refund-section-more {
+    color: #999;
+
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.refund-section-more:hover {
+    color: #555;
+}
