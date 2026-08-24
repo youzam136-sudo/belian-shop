@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/product-detail.css";
 
 import Header from "../components/Header";
@@ -36,6 +36,7 @@ function CartIcon() {
 
 function ProductDetailPage() {
     const { productId } = useParams<{ productId: string }>();
+    const navigate = useNavigate();
     const product = products.find(
         (item) => item.id === Number(productId),
     );
@@ -185,7 +186,20 @@ function ProductDetailPage() {
                                 장바구니
                             </button>
 
-                            <button type="button" className="product-detail-buy-btn">
+                            <button
+                                type="button"
+                                className="product-detail-buy-btn"
+                                onClick={() =>
+                                    navigate("/checkout", {
+                                        state: {
+                                            productName: product.name,
+                                            optionLabel: selectedSize.label,
+                                            quantity,
+                                            price: selectedSize.price,
+                                        },
+                                    })
+                                }
+                            >
                                 바로구매
                             </button>
                         </div>
