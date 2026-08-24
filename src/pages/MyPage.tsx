@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/mypage.css";
+import "../styles/refund.css";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -60,6 +61,43 @@ const subOrders: SubOrder[] = [
     {
         name: "스킨케어 제품",
         description: "매일 부담 없이 사용할 수 있는 데일리 케어",
+    },
+];
+
+type RefundStatus = "완료" | "처리중" | "거절";
+
+type RefundItem = {
+    id: number;
+    date: string;
+    name: string;
+    description: string;
+    type: "취소" | "환불";
+    status: RefundStatus;
+    amount: number;
+    reason: string;
+};
+
+// 마이페이지 메인에는 최근 취소/환불 내역 일부만 미리보기로 보여준다.
+const recentRefunds: RefundItem[] = [
+    {
+        id: 1,
+        date: "7.7 19.41 주문",
+        name: "스킨케어 제품",
+        description: "손잡이 없이 깔끔하게! 터치 한번으로 간편하게!",
+        type: "환불",
+        status: "완료",
+        amount: 4300,
+        reason: "단순 변심",
+    },
+    {
+        id: 2,
+        date: "7.5 11.20 주문",
+        name: "스킨케어 제품",
+        description: "손잡이 없이 깔끔하게! 터치 한번으로 간편하게!",
+        type: "취소",
+        status: "처리중",
+        amount: 4300,
+        reason: "배송 지연",
     },
 ];
 
@@ -173,10 +211,46 @@ function OrderCard({ order, delay }: { order: Order; delay?: 1 | 2 | 3 | 4 }) {
     );
 }
 
+function RefundPreviewCard({ item, delay }: { item: RefundItem; delay?: 1 | 2 | 3 | 4 }) {
+    const { ref, isVisible } = useReveal<HTMLElement>();
+
+    return (
+        <article
+            ref={ref}
+            className={revealClass("refund-card", isVisible, delay)}
+        >
+            <div className="refund-card-main">
+                <div className="order-product-image">
+                    <div className="mypage-product-placeholder" />
+                </div>
+
+                <div className="order-product-info">
+                    <span className="order-date">
+                        {item.date}
+                    </span>
+
+                    <h3>
+                        {item.name}
+                    </h3>
+
+                    <p>
+                        {item.description}
+                    </p>
+                </div>
+
+                <span className={`refund-status refund-status-${item.status}`}>
+                    {item.type} {item.status}
+                </span>
+            </div>
+        </article>
+    );
+}
+
 function MyPage() {
     const { ref: sidebarRef, isVisible: sidebarVisible } = useReveal<HTMLElement>();
     const { ref: quickRef, isVisible: quickVisible } = useReveal<HTMLDivElement>();
     const { ref: historyRef, isVisible: historyVisible } = useReveal<HTMLDivElement>();
+    const { ref: refundRef, isVisible: refundVisible } = useReveal<HTMLDivElement>();
 
     return (
         <>
@@ -192,10 +266,6 @@ function MyPage() {
                         <nav>
                             <a href="#" className="active">
                                 마이페이지
-                            </a>
-
-                            <a href="#">
-                                쇼핑정보
                             </a>
 
                             <Link to="/mypage/refund">
@@ -280,6 +350,27 @@ function MyPage() {
                                     <OrderCard
                                         key={order.id}
                                         order={order}
+                                        delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* 취소/환불 내역 미리보기 */}
+                        <div ref={refundRef} className={revealClass("refund-section", refundVisible, 3)}>
+                            <div className="refund-section-head">
+                                <h2>취소/환불 내역</h2>
+
+                                <Link to="/mypage/refund" className="refund-section-more">
+                                    전체보기
+                                </Link>
+                            </div>
+
+                            <div className="refund-list">
+                                {recentRefunds.map((item, index) => (
+                                    <RefundPreviewCard
+                                        key={item.id}
+                                        item={item}
                                         delay={((index % 4) + 1) as 1 | 2 | 3 | 4}
                                     />
                                 ))}
