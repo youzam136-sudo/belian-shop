@@ -659,3 +659,46 @@ MOBILE
         row-gap: 30px;
     }
 }
+
+/* ========================================
+   최근 본 상품 - 페이지네이션
+======================================== */
+
+.recent-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 50px;
+}
+
+.recent-pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 30px;
+    height: 30px;
+
+    border: 0;
+
+    background: none;
+    color: #999;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.recent-pagination button.is-active {
+    color: #111;
+    font-weight: 700;
+}
+
+.recent-pagination button:disabled {
+    opacity: 0.35;
+
+    cursor: default;
+}
