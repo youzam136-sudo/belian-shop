@@ -280,9 +280,9 @@ function MyPage() {
                                 리뷰 작성
                             </Link>
 
-                            <a href="#">
+                            <Link to="/mypage/coupon">
                                 나의 쿠폰
-                            </a>
+                            </Link>
 
                             <a href="#">
                                 내 정보 관리
