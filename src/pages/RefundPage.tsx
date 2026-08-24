@@ -152,10 +152,6 @@ function RefundPage() {
                                 마이페이지
                             </Link>
 
-                            <a href="#">
-                                쇼핑정보
-                            </a>
-
                             <Link to="/mypage/refund" className="active">
                                 취소/환불 내역
                             </Link>
