@@ -597,3 +597,38 @@ MOBILE
         font-size: 11px;
     }
 }
+
+/* ========================================
+   마이페이지 - 최근 본 상품
+======================================== */
+
+.mypage-recent-section {
+    margin-top: 42px;
+}
+
+.mypage-recent-section > h2 {
+    margin: 0 0 24px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mypage-recent-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+    .mypage-recent-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .mypage-recent-section {
+        margin-top: 30px;
+    }
+
+    .mypage-recent-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
