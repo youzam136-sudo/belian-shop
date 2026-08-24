@@ -84,7 +84,7 @@
 
 .review-writable-main {
     display: grid;
-    grid-template-columns: 70px 1fr;
+    grid-template-columns: 88px 1fr;
 
     gap: 16px;
 
@@ -349,6 +349,11 @@
         grid-template-columns: 56px 1fr;
 
         gap: 12px;
+    }
+
+    .review-writable-main .order-product-image {
+        width: 56px;
+        height: 56px;
     }
 
     .review-written-head {
