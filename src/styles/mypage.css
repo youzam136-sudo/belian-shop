@@ -26,6 +26,11 @@ LEFT SIDE MENU
 ======================================== */
 
 .mypage-sidebar {
+    align-self: start;
+
+    position: sticky;
+    top: 110px;
+
     padding-top: 8px;
 }
 
