@@ -608,7 +608,14 @@
     font-size: 15px;
 }
 
-.promotion-copy button {
+.promotion-copy button,
+.promotion-copy a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
     margin-top: 1rem;
     border: 0;
     border-radius: 50px;
@@ -618,6 +625,7 @@
     padding: 10px 20px;
     font-size: 15px;
     line-height: 1;
+    text-decoration: none;
 }
 
 .promotion-visual {
@@ -1039,7 +1047,8 @@
         font-size: 11px;
     }
 
-    .promotion-copy button {
+    .promotion-copy button,
+    .promotion-copy a {
         width: auto;
         height: 28px;
 
