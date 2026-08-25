@@ -30,6 +30,7 @@ type AvailableCoupon = {
     description: string;
     condition: string;
     dateRange: string;
+    minAmount: number;
 };
 
 const initialHeldCoupons: HeldCoupon[] = [
@@ -49,24 +50,27 @@ const availableCoupons: AvailableCoupon[] = [
         percent: 30,
         title: "신규 회원 깜짝 30% 쿠폰",
         description: "스킨케어 세트 상품에 사용 가능한 30% 쿠폰입니다.",
-        condition: "1원 이상 구매 시 최대 50,000원 할인",
+        condition: "20,000원 이상 구매 시 최대 50,000원 할인",
         dateRange: "사용 기간: 2026-08-20 ~ 2026-08-28",
+        minAmount: 20000,
     },
     {
         id: 2,
         percent: 30,
         title: "스페셜 상품 30% 쿠폰",
         description: "일부 스페셜 상품에 적용 가능한 쿠폰이에요 (일부 상품 제외).",
-        condition: "10,000원 이상 구매 시 최대 30,000원 할인",
+        condition: "1원 이상 구매 시 최대 30,000원 할인",
         dateRange: "사용 기간: 2026-07-16 ~ 2026-08-31",
+        minAmount: 1,
     },
     {
         id: 3,
         percent: 30,
         title: "뉴시즌 키워드 개강룩 30% 쿠폰",
         description: "뉴시즌 참여 상품에 사용 가능한 30% 쿠폰입니다. 일부 상품은 제외될 수 있습니다.",
-        condition: "20,000원 이상 구매 시 최대 50,000원 할인",
+        condition: "10,000원 이상 구매 시 최대 50,000원 할인",
         dateRange: "사용 기간: 2026-08-24 ~ 2026-08-25",
+        minAmount: 10000,
     },
 ];
 
@@ -96,6 +100,13 @@ function CouponPage() {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [downloaded, setDownloaded] = useState<number[]>([]);
     const [heldCoupons, setHeldCoupons] = useState<HeldCoupon[]>(initialHeldCoupons);
+    const [sortBy, setSortBy] = useState<"percent" | "minAmount">("percent");
+
+    const sortedAvailableCoupons = [...availableCoupons].sort((a, b) =>
+        sortBy === "percent"
+            ? b.percent - a.percent
+            : a.minAmount - b.minAmount,
+    );
 
     const handleDownload = (id: number) => {
         if (downloaded.includes(id)) return;
@@ -257,12 +268,25 @@ function CouponPage() {
                 </div>
 
                 <div className="coupon-drawer-filters">
-                    <button type="button" className="is-active">할인율 높은순</button>
-                    <button type="button">최소 주문금액 낮은순</button>
+                    <button
+                        type="button"
+                        className={sortBy === "percent" ? "is-active" : ""}
+                        onClick={() => setSortBy("percent")}
+                    >
+                        할인율 높은순
+                    </button>
+
+                    <button
+                        type="button"
+                        className={sortBy === "minAmount" ? "is-active" : ""}
+                        onClick={() => setSortBy("minAmount")}
+                    >
+                        최소 주문금액 낮은순
+                    </button>
                 </div>
 
                 <div className="coupon-drawer-list">
-                    {availableCoupons.map((coupon) => {
+                    {sortedAvailableCoupons.map((coupon) => {
                         const isDownloaded = downloaded.includes(coupon.id);
 
                         return (
