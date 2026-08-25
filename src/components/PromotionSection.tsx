@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bannerImg from "../assets/main-banner02.png";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
@@ -20,7 +21,7 @@ function PromotionSection() {
                     신규 회원을 위한 다양한 혜택을 준비했습니다.
                 </p>
 
-                <button>회원가입하기</button>
+                <Link to="/signup">회원가입하기</Link>
             </div>
 
             <div ref={visualRef} className={revealClass("promotion-visual", visualVisible, 1)}>
