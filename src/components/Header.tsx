@@ -100,17 +100,36 @@ function Header() {
                         회원가입
                     </Link>
 
-                    <Link to="/mypage" className="header-arrow-link">
-                        마이페이지 <span className="header-arrow" />
-                    </Link>
+                    <div className="header-menu-item">
+                        <Link to="/mypage" className="header-arrow-link">
+                            마이페이지 <span className="header-arrow" />
+                        </Link>
+
+                        <div className="header-submenu header-submenu-compact">
+                            <Link to="/mypage">마이페이지</Link>
+                            <Link to="/mypage/refund">취소/환불 내역</Link>
+                            <Link to="/mypage/recent">최근 본 상품</Link>
+                            <Link to="/mypage/review">리뷰 작성</Link>
+                            <Link to="/mypage/coupon">나의 쿠폰</Link>
+                            <Link to="/mypage/profile">내 정보 관리</Link>
+                        </div>
+                    </div>
 
                     <Link to="/cart">
                         장바구니 <b>0</b>
                     </Link>
 
-                    <Link to="/">
-                        한국어 <span className="header-arrow" />
-                    </Link>
+                    <div className="header-menu-item">
+                        <Link to="/">
+                            한국어 <span className="header-arrow" />
+                        </Link>
+
+                        <div className="header-submenu">
+                            <a href="#">한국어</a>
+                            <a href="#">English</a>
+                            <a href="#">日本語</a>
+                        </div>
+                    </div>
                 </nav>
 
                 {/* =========================
