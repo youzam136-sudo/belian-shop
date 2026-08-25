@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function GalleryItem({ className, delay }: { className: string; delay?: 1 | 2 | 3 }) {
-    const { ref, isVisible } = useReveal<HTMLDivElement>();
+    const { ref, isVisible } = useReveal<HTMLAnchorElement>();
     return (
-        <div
+        <Link
+            to="/community/event"
             ref={ref}
             className={revealClass(`gallery-item ${className}`, isVisible, delay)}
         />
