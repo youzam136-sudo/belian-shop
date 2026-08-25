@@ -23,6 +23,7 @@ import EventPage from "./pages/EventPage";
 import NoticePage from "./pages/NoticePage";
 import ReviewPage from "./pages/ReviewPage";
 import CouponPage from "./pages/CouponPage";
+import ProfilePage from "./pages/ProfilePage";
 import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
@@ -110,6 +111,11 @@ function App() {
         <Route
           path="/mypage/coupon"
           element={<CouponPage />}
+        />
+
+        <Route
+          path="/mypage/profile"
+          element={<ProfilePage />}
         />
 
         <Route
