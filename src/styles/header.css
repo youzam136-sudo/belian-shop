@@ -153,9 +153,23 @@
 */
 
 .header-left:has(.header-menu-item:hover) .header-submenu,
+.header-right:has(.header-menu-item:hover) .header-submenu,
 .header-submenu:hover {
     opacity: 1;
     visibility: visible;
+}
+
+/* 마이페이지 서브메뉴는 항목이 많아서 간격을 좁혀서 배경 높이 안에 들어오게 한다 */
+.header-submenu.header-submenu-compact {
+    gap: 16px;
+}
+
+/* 오른쪽 영역의 서브메뉴는 아이템이 브라우저 밖으로 나가지 않도록 오른쪽 기준으로 정렬한다 */
+.header-right .header-submenu {
+    left: auto;
+    right: 0;
+
+    align-items: flex-end;
 }
 
 .header-submenu a {
