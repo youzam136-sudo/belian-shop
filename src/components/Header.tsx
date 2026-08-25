@@ -65,7 +65,7 @@ function Header() {
                     </div>
 
                     <div className="header-menu-item">
-                        <Link to="/">
+                        <Link to="/community/notice">
                             커뮤니티
                         </Link>
 
@@ -279,16 +279,24 @@ function Header() {
                                 마이페이지
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
-                                쇼핑정보
+                            <Link to="/mypage/refund" onClick={closeMobileMenu}>
+                                취소/환불 내역
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/mypage/recent" onClick={closeMobileMenu}>
                                 최근 본 상품
                             </Link>
 
-                            <Link to="/" onClick={closeMobileMenu}>
+                            <Link to="/mypage/review" onClick={closeMobileMenu}>
                                 리뷰 작성
+                            </Link>
+
+                            <Link to="/mypage/coupon" onClick={closeMobileMenu}>
+                                나의 쿠폰
+                            </Link>
+
+                            <Link to="/mypage/profile" onClick={closeMobileMenu}>
+                                내 정보 관리
                             </Link>
                         </div>
                     </div>

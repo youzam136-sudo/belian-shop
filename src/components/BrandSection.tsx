@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function BrandSection() {
@@ -29,7 +30,7 @@ function BrandSection() {
                     새로운 라이프스타일을 제안합니다.
                 </p>
 
-                <a href="#">바로가기</a>
+                <Link to="/brand">바로가기</Link>
             </div>
         </section>
     );

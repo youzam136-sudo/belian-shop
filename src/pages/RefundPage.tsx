@@ -168,9 +168,9 @@ function RefundPage() {
                                 나의 쿠폰
                             </Link>
 
-                            <a href="#">
+                            <Link to="/mypage/profile">
                                 내 정보 관리
-                            </a>
+                            </Link>
                         </nav>
 
                         <div className="mypage-sidebar-line bottom" />

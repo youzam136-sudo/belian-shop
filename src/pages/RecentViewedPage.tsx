@@ -158,7 +158,7 @@ function RecentViewedPage() {
                             <Link to="/mypage/recent" className="active">최근 본 상품</Link>
                             <Link to="/mypage/review">리뷰 작성</Link>
                             <Link to="/mypage/coupon">나의 쿠폰</Link>
-                            <a href="#">내 정보 관리</a>
+                            <Link to="/mypage/profile">내 정보 관리</Link>
                         </nav>
 
                         <div className="mypage-sidebar-line bottom" />

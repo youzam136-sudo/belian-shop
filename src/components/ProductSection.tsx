@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { products } from "../data/products";
 import { useReveal, revealClass } from "../hooks/useReveal";
@@ -24,9 +25,9 @@ function ProductSection() {
             </div>
 
             <div ref={moreRef} className={revealClass("section-more", moreVisible)}>
-                <button type="button">
+                <Link to="/shop/skin">
                     전체보기<span>+</span>
-                </button>
+                </Link>
             </div>
         </section>
     );

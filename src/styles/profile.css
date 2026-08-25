@@ -1,0 +1,159 @@
+/* ========================================
+   내 정보 관리
+======================================== */
+
+.profile-section {
+    margin-top: 42px;
+
+    max-width: 480px;
+}
+
+.profile-section > h2 {
+    margin: 0 0 24px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 34px;
+}
+
+.profile-field-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.profile-field-group h3 {
+    margin: 0 0 4px;
+
+    color: #111;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.profile-field label {
+    color: #666;
+
+    font-size: 13px;
+}
+
+.profile-field input {
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    background: #fafafa;
+    color: #222;
+
+    font-size: 14px;
+}
+
+.profile-field input:focus {
+    outline: none;
+
+    border-color: var(--brown);
+
+    background: #fff;
+}
+
+.profile-field input:disabled {
+    color: #999;
+
+    cursor: not-allowed;
+}
+
+.profile-save-btn {
+    height: 50px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: var(--brown);
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s var(--ease-premium-soft);
+}
+
+.profile-save-btn:hover {
+    opacity: 0.9;
+}
+
+.profile-saved-message {
+    margin: -20px 0 0;
+
+    color: #2e9e4f;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.profile-danger-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 40px;
+    padding-top: 24px;
+
+    border-top: 1px solid #eee;
+}
+
+.profile-danger-zone span {
+    color: #999;
+
+    font-size: 12px;
+}
+
+.profile-danger-zone button {
+    padding: 0;
+
+    border: 0;
+
+    background: none;
+
+    color: #b04040;
+
+    font-size: 12px;
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .profile-section {
+        margin-top: 30px;
+    }
+
+    .profile-form {
+        gap: 26px;
+    }
+}
