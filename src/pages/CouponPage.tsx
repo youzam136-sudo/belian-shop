@@ -220,9 +220,12 @@ function CouponPage() {
                                                 {coupon.expiry}
                                             </span>
 
-                                            <button type="button" className="coupon-apply-btn">
+                                            <Link
+                                                to="/shop/skin"
+                                                className="coupon-apply-btn"
+                                            >
                                                 적용 상품 보기
-                                            </button>
+                                            </Link>
                                         </div>
                                     ))}
                                 </div>
