@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ProductSection from "../components/ProductSection";
 import BrandSection from "../components/BrandSection";
+import MembershipSection from "../components/MembershipSection";
 import PromotionSection from "../components/PromotionSection";
 import KeywordSection from "../components/KeywordSection";
 import GallerySection from "../components/GallerySection";
@@ -19,6 +20,8 @@ function HomePage() {
                 <ProductSection />
 
                 <BrandSection />
+
+                <MembershipSection />
 
                 <ProductSection />
 
