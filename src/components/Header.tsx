@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
+import logoBlack from "../assets/logo_black.png";
 
 function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -85,7 +86,7 @@ function Header() {
                     className="header-logo"
                     onClick={closeMobileMenu}
                 >
-                    ONETWO
+                    <img src={logoBlack} alt="BELIAN" className="header-logo-img" />
                 </Link>
 
                 {/* =========================
