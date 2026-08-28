@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/shop.css";
 
 import Header from "../components/Header";
@@ -10,7 +9,6 @@ import shopHero from "../assets/shop/shop-hero.png";
 import productImage from "../assets/shop/product.png";
 
 import {
-    categories,
     products,
     type ShopProduct,
 } from "../data/shopProducts";
@@ -115,34 +113,8 @@ function ShopProductCard({ product, delay }: { product: ShopProduct; delay?: 1 |
 }
 
 function ShopPage() {
-    // URL의 :categoryId 값을 카테고리로 사용한다.
-    // 예) /shop/skin, /shop/serum, /shop/mask
-    const { categoryId } = useParams<{ categoryId: string }>();
-    const navigate = useNavigate();
-
-    const activeCategory =
-        categories.some((item) => item.id === categoryId)
-            ? (categoryId as string)
-            : "skin";
-
-    // 존재하지 않는 카테고리 경로로 들어오면 기본 카테고리로 보정한다.
-    useEffect(() => {
-        if (categoryId && !categories.some((item) => item.id === categoryId)) {
-            navigate("/shop/skin", { replace: true });
-        }
-    }, [categoryId, navigate]);
-
     const { ref: heroRef, isVisible: heroVisible } = useReveal<HTMLElement>();
     const { ref: headingRef, isVisible: headingVisible } = useReveal<HTMLDivElement>();
-
-    const category =
-        categories.find(
-            (item) => item.id === activeCategory,
-        ) ?? categories[0];
-
-    const visibleProducts = products.filter(
-        (product) => product.category === activeCategory,
-    );
 
     return (
         <>
@@ -162,46 +134,26 @@ function ShopPage() {
 
                     <div className="shop-hero-content">
                         <h1>
-                            당신의 피부를 더 건강하게 만드는 스킨케어
+                            눈에 보이는 효과를 넘어 내면까지 작동하는
                         </h1>
 
                         <p>
-                            피부를 촉촉하게 전체적으로 감싸줍니다.
+                            내면과 외면의 완전한 웰빙을 추구하는 모던 프리미엄 이너뷰티 브랜드입니다.
                         </p>
                     </div>
                 </section>
 
-                {/* CATEGORY NAV */}
+                {/* PRODUCTS (탭 없이 상품 1개만) */}
                 <section className="shop-category-section">
-                    <nav className="shop-category-tabs">
-                        {categories.map((item) => (
-                            <button
-                                key={item.id}
-                                type="button"
-                                className={
-                                    activeCategory === item.id
-                                        ? "is-active"
-                                        : ""
-                                }
-                                onClick={() =>
-                                    navigate(`/shop/${item.id}`)
-                                }
-                            >
-                                {item.label}
-                            </button>
-                        ))}
-                    </nav>
 
-                    {/* TITLE */}
                     <div ref={headingRef} className={revealClass("shop-category-heading", headingVisible)}>
-                        <h2>{category.title}</h2>
+                        <h2>Wineberry Firming Collagen Jelly</h2>
 
-                        <p>{category.description}</p>
+                        <p>와인베리 퍼밍 콜라겐 젤리</p>
                     </div>
 
-                    {/* PRODUCTS */}
                     <div className="shop-product-grid">
-                        {visibleProducts.map((product, index) => (
+                        {products.map((product, index) => (
                             <ShopProductCard
                                 key={product.id}
                                 product={product}
