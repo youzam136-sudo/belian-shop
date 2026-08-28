@@ -5,11 +5,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
-import heroBg from "../assets/brand-hero.png";
-import dailyBg from "../assets/brand-daily.png";
-import storyImg1 from "../assets/brand-story-1.png";
-import storyImg2 from "../assets/brand-story-2.png";
-import storyImg3 from "../assets/brand-story-3.png";
+import heroBg from "../assets/brand-hero.jpg";
+import storyImg1 from "../assets/brand-story-1.jpg";
+import storyImg2 from "../assets/brand-story-2.jpg";
+import storyImg3 from "../assets/brand-story-3.jpg";
 
 function StoryRow({
     image,
@@ -58,7 +57,6 @@ function BrandPage() {
     const { ref: heroRef, isVisible: heroVisible } = useReveal<HTMLElement>();
     const { ref: introRef, isVisible: introVisible } = useReveal<HTMLDivElement>();
     const { ref: dailyHeadRef, isVisible: dailyHeadVisible } = useReveal<HTMLDivElement>();
-    const { ref: dailyBannerRef, isVisible: dailyBannerVisible } = useReveal<HTMLDivElement>();
     const { ref: whatHeadRef, isVisible: whatHeadVisible } = useReveal<HTMLDivElement>();
 
     return (
