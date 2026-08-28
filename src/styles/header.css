@@ -234,7 +234,7 @@
 .header-logo {
     display: flex;
     align-items: center;
-
+    width: 100px;
     color: #111;
 
     font-size: 18px;
