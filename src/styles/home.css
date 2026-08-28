@@ -529,6 +529,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
+    height: 320px;
     margin: 0 auto;
 }
 
