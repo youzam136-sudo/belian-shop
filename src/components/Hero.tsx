@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import { useReveal, revealClass } from "../hooks/useReveal";
 
 import heroSlide1 from "../assets/hero/slide-1.png";
 import heroSlide2 from "../assets/hero/slide-2.png";
@@ -10,7 +9,6 @@ const heroSlides = [heroSlide1, heroSlide2, heroSlide3];
 const AUTO_PLAY_INTERVAL = 5500;
 
 function Hero() {
-    const { ref, isVisible } = useReveal<HTMLElement>();
     const [activeIndex, setActiveIndex] = useState(0);
 
     const goTo = useCallback((index: number) => {
@@ -36,7 +34,7 @@ function Hero() {
     }, [activeIndex]);
 
     return (
-        <section ref={ref} className="hero">
+        <section className="hero">
             <div className="hero-slides">
                 {heroSlides.map((src, index) => (
                     <div
