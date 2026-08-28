@@ -239,16 +239,14 @@
 
     font-size: 18px;
     font-weight: 800;
-width: 100px;
+
     letter-spacing: -1px;
 }
 
 .header-logo-img {
-    display: block !important;
-    height: 20px !important;
-    width: auto !important;
-    max-width: none !important;
-    max-height: none !important;
+    display: block;
+    height: 20px;
+    width: auto;
 }
 
 
@@ -351,7 +349,7 @@ width: 100px;
     }
 
     .header-logo-img {
-       height: 22px !important;
+        height: 22px;
     }
 
 
@@ -453,3 +451,196 @@ width: 100px;
     .mobile-menu.is-open {
         opacity: 1;
         visibility: visible;
+
+        transform: translateY(0);
+    }
+
+
+    /* ========================================
+     MOBILE INNER
+  ======================================== */
+
+    .mobile-menu-inner {
+        width: 100%;
+
+        padding:
+            42px 34px 70px;
+    }
+
+
+    /* ========================================
+     MAIN LINKS
+  ======================================== */
+
+    .mobile-main-link,
+    .mobile-dropdown-button {
+        color: #111;
+
+        font-size: 19px;
+        font-weight: 400;
+    }
+
+    .mobile-main-link {
+        display: block;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* ========================================
+     DROPDOWN
+  ======================================== */
+
+    .mobile-dropdown {
+        margin-bottom: 28px;
+    }
+
+    .mobile-dropdown-button {
+        display: flex;
+        align-items: center;
+
+        gap: 8px;
+
+        width: fit-content;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        cursor: pointer;
+    }
+
+    .mobile-arrow {
+        display: inline-block;
+
+        color: #999;
+
+        font-size: 12px;
+
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-arrow.is-open {
+        transform: rotate(180deg);
+    }
+
+
+    /* ========================================
+     SUBMENU
+  ======================================== */
+
+    .mobile-submenu {
+        display: flex;
+        flex-direction: column;
+
+        gap: 16px;
+
+        max-height: 0;
+
+        margin-top: 0;
+        padding-left: 12px;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        transition:
+            max-height 0.3s ease,
+            margin-top 0.3s ease,
+            opacity 0.2s ease;
+    }
+
+    .mobile-submenu.is-open {
+        max-height: 300px;
+
+        margin-top: 20px;
+
+        opacity: 1;
+    }
+
+    .mobile-submenu a,
+    .mobile-submenu button {
+        width: fit-content;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        color: #857c73;
+
+        font-size: 14px;
+
+        text-align: left;
+
+        cursor: pointer;
+    }
+
+
+    /* ========================================
+     위 / 아래 그룹 사이 간격
+  ======================================== */
+
+    .mobile-menu-gap {
+        height: 42px;
+    }
+
+
+    /* ========================================
+     SECONDARY
+  ======================================== */
+
+    .mobile-secondary-link {
+        display: flex;
+        align-items: center;
+
+        gap: 7px;
+
+        width: fit-content;
+
+        margin-bottom: 23px;
+
+        color: #92887e;
+
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .mobile-dropdown.secondary {
+        margin-bottom: 0;
+    }
+
+    .mobile-dropdown.secondary .mobile-dropdown-button {
+        margin-bottom: 23px;
+
+        color: #92887e;
+
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .mobile-dropdown.secondary .mobile-submenu {
+        margin-left: 0;
+    }
+
+
+    /* cart count */
+
+    .mobile-secondary-link b {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 16px;
+        height: 16px;
+
+        background: #9c775a;
+        color: #fff;
+
+        font-size: 9px;
+        font-weight: 400;
+    }
+}
