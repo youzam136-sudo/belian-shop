@@ -8,9 +8,6 @@ function BrandSection() {
     return (
         <section className="brand-section">
             <div ref={visualRef} className={revealClass("brand-visual", visualVisible)}>
-                {/* <div className="brand-pill">
-                    ONETWO
-                </div> */}
             </div>
 
             <div ref={copyRef} className={revealClass("brand-copy", copyVisible, 1)}>
@@ -18,19 +15,17 @@ function BrandSection() {
                     BRAND STORY
                 </span>
 
-                <h2>ONETWO</h2>
+                <h2>POVELO</h2>
 
                 <p>
-                    브랜드가 추구하는 가치와
+                    브랜드 철학
                     <br />
-                    감성을 담아 제품을 소개합니다.
+                    눈에 보이는 효과를 넘어 내면까지 작동하는
                     <br />
-                    자연과 공간에서 영감을 받은
-                    <br />
-                    새로운 라이프스타일을 제안합니다.
+                    근본적인 메커니즘을 깨우다
                 </p>
 
-                <Link to="/brand">바로가기</Link>
+                <Link to="/brand" className="brand-more-btn">VIEW MORE</Link>
             </div>
         </section>
     );
