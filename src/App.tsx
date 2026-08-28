@@ -1,10 +1,10 @@
+import "./App.css";
 import {
   BrowserRouter,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
@@ -34,105 +34,82 @@ function App() {
           path="/"
           element={<HomePage />}
         />
-
         <Route
           path="/brand"
           element={<BrandPage />}
         />
-
         <Route
           path="/login"
           element={<LoginPage />}
         />
-
         <Route
           path="/signup"
           element={<SignupPage />}
         />
-
         <Route
           path="/find-id"
           element={<FindIdPage />}
         />
-
         <Route
           path="/find-password"
           element={<FindPasswordPage />}
         />
-
-        {/* /shop 으로 들어오면 기본 카테고리(스킨)로 이동 */}
         <Route
           path="/shop"
           element={<Navigate to="/shop/skin" replace />}
         />
-
-        {/* 카테고리별 실제 URL: /shop/skin, /shop/serum, /shop/mask 등 */}
         <Route
           path="/shop/:categoryId"
           element={<ShopPage />}
         />
-
-        {/* 상품 상세: /product/1, /product/305 등 */}
         <Route
           path="/product/:productId"
           element={<ProductDetailPage />}
         />
-
         <Route
           path="/cart"
           element={<CartPage />}
         />
-
         <Route
           path="/mypage"
           element={<MyPage />}
         />
-
         <Route
           path="/mypage/delivery"
           element={<DeliveryPage />}
         />
-
         <Route
           path="/mypage/refund"
           element={<RefundPage />}
         />
-
         <Route
           path="/mypage/recent"
           element={<RecentViewedPage />}
         />
-
         <Route
           path="/mypage/review"
           element={<ReviewPage />}
         />
-
         <Route
           path="/mypage/coupon"
           element={<CouponPage />}
         />
-
         <Route
           path="/mypage/profile"
           element={<ProfilePage />}
         />
-
         <Route
           path="/checkout"
           element={<CheckoutPage />}
         />
-
         <Route
           path="/community/inquiry"
           element={<InquiryBoardPage />}
         />
-
         <Route
           path="/community/event"
           element={<EventPage />}
         />
-
         <Route
           path="/community/notice"
           element={<NoticePage />}
