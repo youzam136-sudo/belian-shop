@@ -5,14 +5,11 @@ import logoBlack from "../assets/logo_black.png";
 
 function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [shopOpen, setShopOpen] = useState(false);
     const [communityOpen, setCommunityOpen] = useState(false);
     const [mypageOpen, setMypageOpen] = useState(false);
     const [languageOpen, setLanguageOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // 헤더가 화면 상단에 고정된(sticky) 상태에서 스크롤이 조금이라도
-    // 내려가면 살짝 그림자를 줘서 "떠 있는" 느낌을 자연스럽게 표현한다.
     useEffect(() => {
         let ticking = false;
 
@@ -35,7 +32,6 @@ function Header() {
 
     const closeMobileMenu = () => {
         setMobileOpen(false);
-        setShopOpen(false);
         setCommunityOpen(false);
         setMypageOpen(false);
         setLanguageOpen(false);
@@ -52,18 +48,9 @@ function Header() {
                         브랜드소개
                     </Link>
 
-                    <div className="header-menu-item">
-                        <Link to="/shop">
-                            SHOP
-                        </Link>
-
-                        <div className="header-submenu">
-                            <Link to="/shop/skin">스킨</Link>
-                            <Link to="/shop/cream">크림</Link>
-                            <Link to="/shop/cleanser">폼클렌징</Link>
-                            <Link to="/shop/etc">기타</Link>
-                        </div>
-                    </div>
+                    <Link to="/shop/skin">
+                        SHOP
+                    </Link>
 
                     <div className="header-menu-item">
                         <Link to="/community/notice">
@@ -173,46 +160,13 @@ function Header() {
                         브랜드소개
                     </Link>
 
-                    {/* SHOP */}
-                    <div className="mobile-dropdown">
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button"
-                            onClick={() =>
-                                setShopOpen((prev) => !prev)
-                            }
-                        >
-                            <span>SHOP</span>
-
-                            <span
-                                className={`mobile-arrow ${shopOpen ? "is-open" : ""
-                                    }`}
-                            >
-                                ▾
-                            </span>
-                        </button>
-
-                        <div
-                            className={`mobile-submenu ${shopOpen ? "is-open" : ""
-                                }`}
-                        >
-                            <Link to="/shop/skin" onClick={closeMobileMenu}>
-                                스킨
-                            </Link>
-
-                            <Link to="/shop/cream" onClick={closeMobileMenu}>
-                                크림
-                            </Link>
-
-                            <Link to="/shop/cleanser" onClick={closeMobileMenu}>
-                                폼클렌징
-                            </Link>
-
-                            <Link to="/shop/etc" onClick={closeMobileMenu}>
-                                기타
-                            </Link>
-                        </div>
-                    </div>
+                    <Link
+                        to="/shop/skin"
+                        className="mobile-main-link"
+                        onClick={closeMobileMenu}
+                    >
+                        SHOP
+                    </Link>
 
                     {/* COMMUNITY */}
                     <div className="mobile-dropdown">
