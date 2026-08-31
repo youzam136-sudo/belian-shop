@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bannerImg from "../assets/main-banner02.png";
+import bannerImg from "../assets/prd-img.png";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function PromotionSection() {
