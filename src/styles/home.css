@@ -799,6 +799,59 @@
     background-size: cover;
 }
 
+@media (max-width: 1024px) {
+    .hero {
+        height: 620px;
+    }
+
+    .hero-copy h1 {
+        margin: 0 0 22px;
+
+        font-size: 52px;
+    }
+
+    .hero-copy p {
+        font-size: 17px;
+    }
+
+    .product-section {
+        padding: 6rem 0 9rem;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        column-gap: 20px;
+        row-gap: 40px;
+    }
+
+    .brand-section {
+        height: 760px;
+    }
+
+    .brand-copy h2 {
+        margin: 0 0 2.2rem;
+
+        font-size: 32px;
+    }
+
+    .brand-copy p {
+        font-size: 17px;
+    }
+
+    .promotion-copy h2 {
+        font-size: 28px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .hero {
