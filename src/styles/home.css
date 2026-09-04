@@ -7,13 +7,13 @@
 
     width: 100%;
     min-width: var(--page-width);
-    height: 1080px;
+    height: 1082px;
     margin-top: -115px;
     padding-top: 115px;
 
     background-color: #fde4eb;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 0% 0%;
     background-size: cover;
 
     overflow: hidden;
@@ -23,42 +23,56 @@
     position: relative;
     z-index: 2;
 
-    width: var(--content-width);
+    width: 100%;
     height: 100%;
-
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
 }
 
 .hero-copy {
-    max-width: 480px;
-    color: #1a1a1a;
+    position: absolute;
+    top: 337px;
+    left: 180px;
+    color: #000000;
 }
 
 .hero-copy h1 {
-    font-size: clamp(32px, 4vw, 52px);
-    line-height: 1.25;
-    font-weight: 700;
-    margin: 0 0 20px;
+    width: 426px;
+    height: 186px;
+    margin: 0 0 89px;
+
+    text-align: left;
+    font: normal normal normal 75px/88px "ABC Maxi Round";
+    letter-spacing: 0px;
+    color: #000000;
 }
 
 .hero-copy p {
-    font-size: 16px;
-    color: #4a4a4a;
-    margin: 0 0 28px;
+    width: 326px;
+    height: 25px;
+    margin: 0 0 59px;
+
+    text-align: left;
+    font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 0px;
+    color: #000000;
 }
 
 .hero-more-btn {
-    display: inline-block;
-    background: #feeaef;
-    color: #1a1a1a;
-    font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 22px;
-    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 154px;
+    height: 45px;
+
+    background: rgba(255, 255, 255, 0.58) 0% 0% no-repeat padding-box;
+    border-radius: 23px;
+
+    text-align: left;
+    font: normal normal normal 16px/21px "ABC Maxi Round";
+    letter-spacing: 0px;
+    color: #000000;
 }
 
 .hero-dots {
@@ -723,14 +737,32 @@
         height: 620px;
     }
 
+    .hero-copy {
+        top: 160px;
+        left: 60px;
+    }
+
     .hero-copy h1 {
+        width: auto;
+        height: auto;
         margin: 0 0 22px;
 
         font-size: 52px;
+        line-height: 1.2;
     }
 
     .hero-copy p {
+        width: auto;
+        height: auto;
+        margin: 0 0 30px;
+
         font-size: 17px;
+    }
+
+    .hero-more-btn {
+        width: auto;
+        height: auto;
+        padding: 12px 22px;
     }
 
     .product-section {
@@ -788,17 +820,30 @@
     }
 
     .hero-copy {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 88%;
         max-width: 100%;
         text-align: center;
     }
 
     .hero-copy h1 {
+        width: 100%;
+        height: auto;
         margin-bottom: 20px;
 
         font-size: 32px;
+        line-height: 1.2;
     }
 
     .hero-copy p {
+        width: 100%;
+        height: auto;
+        margin-bottom: 24px;
+
         font-size: 14px;
         line-height: 1.7;
     }
