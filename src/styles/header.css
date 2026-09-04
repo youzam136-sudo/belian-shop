@@ -131,7 +131,7 @@
 .header-submenu {
     position: absolute;
 
-    top: 58px;
+    top: 87px;
     left: 0;
 
     z-index: 20;
@@ -201,17 +201,19 @@
 .header-dropdown-background {
     position: absolute;
 
-    top: 58px;
-    left: 0;
+    top: 87px;
+    left: 130px;
+    right: 130px;
 
     z-index: 10;
 
-    width: 100%;
+    width: auto;
     height: 0;
 
-    border-bottom: 1px solid transparent;
+    border-radius: 24px;
 
     background: #fff;
+    box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.18);
 
     opacity: 0;
     visibility: hidden;
@@ -225,8 +227,6 @@
 .header:has(.header-menu-item:hover) .header-dropdown-background,
 .header:has(.header-submenu:hover) .header-dropdown-background {
     height: 280px;
-
-    border-bottom-color: #eee;
 
     opacity: 1;
     visibility: visible;
