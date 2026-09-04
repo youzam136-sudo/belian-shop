@@ -8,7 +8,6 @@ function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [communityOpen, setCommunityOpen] = useState(false);
     const [mypageOpen, setMypageOpen] = useState(false);
-    const [languageOpen, setLanguageOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -35,7 +34,6 @@ function Header() {
         setMobileOpen(false);
         setCommunityOpen(false);
         setMypageOpen(false);
-        setLanguageOpen(false);
     };
 
     return (
@@ -45,17 +43,17 @@ function Header() {
             PC LEFT
         ========================= */}
                 <nav className="header-left">
-                    <Link to="/brand">
-                        브랜드소개
-                    </Link>
-
                     <Link to="/shop/skin">
                         SHOP
                     </Link>
 
+                    <Link to="/brand">
+                        BRAND STORY
+                    </Link>
+
                     <div className="header-menu-item">
                         <Link to="/community/notice">
-                            커뮤니티
+                            COMMUNITY
                         </Link>
 
                         <div className="header-submenu">
@@ -82,17 +80,16 @@ function Header() {
         ========================= */}
                 <nav className="header-right">
                     <Link to="/login">
-                        로그인
+                        LOGIN
                     </Link>
 
                     <Link to="/signup">
-                        회원가입
+                        JOIN
                     </Link>
 
                     <div className="header-menu-item">
-                        <Link to="/mypage" className="header-arrow-link">
-                            <MyPageIcon className="header-icon-svg" /> 마이페이지{" "}
-                            <span className="header-arrow" />
+                        <Link to="/mypage" className="header-icon-link">
+                            <MyPageIcon className="header-icon-svg" />
                         </Link>
 
                         <div className="header-submenu header-submenu-compact">
@@ -105,21 +102,10 @@ function Header() {
                         </div>
                     </div>
 
-                    <Link to="/cart" className="header-cart-link">
-                        <CartIcon className="header-icon-svg" /> 장바구니 <b>0</b>
+                    <Link to="/cart" className="header-icon-link">
+                        <CartIcon className="header-icon-svg" />
+                        <span className="header-icon-badge">0</span>
                     </Link>
-
-                    <div className="header-menu-item">
-                        <Link to="/">
-                            한국어 <span className="header-arrow" />
-                        </Link>
-
-                        <div className="header-submenu">
-                            <a href="#">한국어</a>
-                            <a href="#">English</a>
-                            <a href="#">日本語</a>
-                        </div>
-                    </div>
                 </nav>
 
                 {/* =========================
@@ -155,19 +141,19 @@ function Header() {
                 <div className="mobile-menu-inner">
 
                     <Link
-                        to="/brand"
-                        className="mobile-main-link"
-                        onClick={closeMobileMenu}
-                    >
-                        브랜드소개
-                    </Link>
-
-                    <Link
                         to="/shop/skin"
                         className="mobile-main-link"
                         onClick={closeMobileMenu}
                     >
                         SHOP
+                    </Link>
+
+                    <Link
+                        to="/brand"
+                        className="mobile-main-link"
+                        onClick={closeMobileMenu}
+                    >
+                        BRAND STORY
                     </Link>
 
                     {/* COMMUNITY */}
@@ -179,7 +165,7 @@ function Header() {
                                 setCommunityOpen((prev) => !prev)
                             }
                         >
-                            <span>커뮤니티</span>
+                            <span>COMMUNITY</span>
 
                             <span
                                 className={`mobile-arrow ${communityOpen ? "is-open" : ""
@@ -214,7 +200,7 @@ function Header() {
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >
-                        로그인
+                        LOGIN
                     </Link>
 
                     <Link
@@ -222,7 +208,7 @@ function Header() {
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >
-                        회원가입
+                        JOIN
                     </Link>
 
                     {/* MY PAGE */}
@@ -286,43 +272,6 @@ function Header() {
                     >
                         <CartIcon className="header-icon-svg" /> 장바구니 <b>0</b>
                     </Link>
-
-                    {/* LANGUAGE */}
-                    <div className="mobile-dropdown secondary">
-                        <button
-                            type="button"
-                            className="mobile-dropdown-button mobile-secondary-link"
-                            onClick={() =>
-                                setLanguageOpen((prev) => !prev)
-                            }
-                        >
-                            <span>한국어</span>
-
-                            <span
-                                className={`mobile-arrow ${languageOpen ? "is-open" : ""
-                                    }`}
-                            >
-                                ▾
-                            </span>
-                        </button>
-
-                        <div
-                            className={`mobile-submenu ${languageOpen ? "is-open" : ""
-                                }`}
-                        >
-                            <button type="button">
-                                한국어
-                            </button>
-
-                            <button type="button">
-                                English
-                            </button>
-
-                            <button type="button">
-                                日本語
-                            </button>
-                        </div>
-                    </div>
 
                 </div>
             </div>
