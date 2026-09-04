@@ -14,7 +14,7 @@ function Hero() {
                         <br />
                         Vital Stay
                     </h1>
-                    <p>내면과 외면의 완전한 웰빙을 추구하는 모던 프리미엄 이너뷰티</p>
+                    <p>긍정 스위치를 켜고 활력을 머무르게 하다</p>
                     <Link to="/shop/skin" className="hero-more-btn">
                         MORE VIEW +
                     </Link>
