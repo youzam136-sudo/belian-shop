@@ -5,6 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import CustomCursor from "./components/CustomCursor";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
@@ -29,6 +30,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 function App() {
   return (
     <BrowserRouter>
+      <CustomCursor />
       <Routes>
         <Route
           path="/"
