@@ -1,31 +1,24 @@
-import { Link } from "react-router-dom";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function BrandSection() {
-    const { ref: visualRef, isVisible: visualVisible } = useReveal<HTMLDivElement>();
     const { ref: copyRef, isVisible: copyVisible } = useReveal<HTMLDivElement>();
 
     return (
         <section className="brand-section">
-            <div ref={visualRef} className={revealClass("brand-visual", visualVisible)}>
-            </div>
-
-            <div ref={copyRef} className={revealClass("brand-copy", copyVisible, 1)}>
-                <span className="brand-eyebrow">
-                    BRAND STORY
-                </span>
-
-                <h2>BELIAN</h2>
+            <div ref={copyRef} className={revealClass("brand-copy", copyVisible)}>
+                <h2>
+                    Positive ON
+                    <br />
+                    Vital Stay
+                </h2>
 
                 <p>
-                    브랜드 철학
+                    포벨로는 눈에 보이는 피부 고민에만 집중하지 않습니다.
                     <br />
-                    눈에 보이는 효과를 넘어 내면까지 작동하는
+                    무너진 내면의 활력과 일상의 리듬을 다시 깨우는 근본적인
                     <br />
-                    근본적인 메커니즘을 깨우다
+                    메커니즘에 집중한 프리미엄 모던 웰니스 루틴 입니다.
                 </p>
-
-                <Link to="/brand" className="brand-more-btn">VIEW MORE</Link>
             </div>
         </section>
     );
