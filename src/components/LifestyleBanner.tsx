@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lifestyleImg from "../assets/brand/brand-hero.jpg";
+import lifestyleModel from "../assets/povelo/lifestyle-model.jpg";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function LifestyleBanner() {
@@ -8,7 +8,7 @@ function LifestyleBanner() {
     return (
         <section
             className="lifestyle-banner"
-            style={{ backgroundImage: `url(${lifestyleImg})` }}
+            style={{ backgroundImage: `url(${lifestyleModel})` }}
         >
             <div
                 ref={ref}
