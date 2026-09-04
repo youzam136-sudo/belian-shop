@@ -6,7 +6,10 @@ function Hero() {
     const { ref, isVisible } = useReveal<HTMLDivElement>();
 
     return (
-        <section className="hero">
+        <section
+            className="hero"
+            style={{ backgroundImage: `url(${heroProduct})` }}
+        >
             <div className="hero-inner">
                 <div ref={ref} className={revealClass("hero-copy", isVisible)}>
                     <h1>
@@ -18,10 +21,6 @@ function Hero() {
                     <Link to="/shop/skin" className="hero-more-btn">
                         MORE VIEW +
                     </Link>
-                </div>
-
-                <div className="hero-visual">
-                    <img src={heroProduct} alt="Wineberry Firming Collagen Jelly" />
                 </div>
             </div>
         </section>
