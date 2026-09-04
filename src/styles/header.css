@@ -4,24 +4,35 @@
 
 .header {
     position: sticky;
-    top: 0;
+    top: 44px;
     z-index: 1000;
 
-    width: 100%;
-    min-width: var(--page-width);
-    height: 70px;
+    width: 1660px;
+    max-width: calc(100% - 260px);
+    min-width: 0;
+    height: 71px;
 
-    border: none;
+    margin: 44px auto 0;
+    border: 1px solid #fff;
+    border-radius: 999px;
 
-    background: transparent;
+    background: #feeaef;
 
     /* 반응형 브레이크포인트에서 높이가 바뀔 때 부드럽게 전환 */
-    transition: height 0.5s var(--ease-premium), background-color 0.3s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+    transition: height 0.5s var(--ease-premium), background-color 0.3s var(--ease-premium), border-radius 0.3s var(--ease-premium), margin 0.3s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
 }
 
 .header.is-scrolled {
-    background: #fff;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 0;
     border-bottom: 1px solid #eee;
+
+    background: #fff;
+
     box-shadow: 0 8px 24px -18px rgba(0, 0, 0, 0.35);
 }
 
@@ -320,7 +331,7 @@
 
     height: 58px;
 
-    color: #8c837a;
+    color: #1a1a1a;
 
     font-size: 14px;
 }
