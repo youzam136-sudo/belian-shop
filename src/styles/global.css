@@ -1,6 +1,6 @@
 :root {
-        --page-width: min(1800px, 94vw);
-        --content-width: min(1800px, 94vw);
+        --page-width: min(1660px, 94vw);
+        --content-width: min(1660px, 94vw);
         --brown: #9f7656;
         --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
         --ease-premium-soft: cubic-bezier(0.65, 0, 0.35, 1);
