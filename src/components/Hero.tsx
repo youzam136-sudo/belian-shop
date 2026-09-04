@@ -64,12 +64,25 @@ function Hero() {
             <div className="hero-inner">
                 <div ref={ref} className={revealClass("hero-copy", isVisible)}>
                     <h1>
-                        Positive ON.
-                        <br />
-                        Vital Stay
+                        <span className="hero-copy-line">
+                            <span style={{ transitionDelay: "0.05s" }}>
+                                Positive ON.
+                            </span>
+                        </span>
+                        <span className="hero-copy-line">
+                            <span style={{ transitionDelay: "0.2s" }}>
+                                Vital Stay
+                            </span>
+                        </span>
                     </h1>
-                    <p>긍정 스위치를 켜고 활력을 머무르게 하다</p>
-                    <Link to="/shop/skin" className="hero-more-btn">
+                    <p style={{ transitionDelay: "0.38s" }}>
+                        긍정 스위치를 켜고 활력을 머무르게 하다
+                    </p>
+                    <Link
+                        to="/shop/skin"
+                        className="hero-more-btn"
+                        style={{ transitionDelay: "0.5s" }}
+                    >
                         MORE VIEW +
                     </Link>
                 </div>
