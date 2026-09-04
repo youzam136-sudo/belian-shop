@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroProduct from "../assets/povelo/hero-product.jpg";
+import heroProduct from "../assets/povelo/hero-product.png";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function Hero() {
