@@ -9,18 +9,19 @@
 
     width: 100%;
     min-width: var(--page-width);
-    height: 58px;
+    height: 70px;
 
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #eee;
+    border: none;
 
-    background: #fff;
+    background: transparent;
 
     /* 반응형 브레이크포인트에서 높이가 바뀔 때 부드럽게 전환 */
-    transition: height 0.5s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+    transition: height 0.5s var(--ease-premium), background-color 0.3s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
 }
 
 .header.is-scrolled {
+    background: #fff;
+    border-bottom: 1px solid #eee;
     box-shadow: 0 8px 24px -18px rgba(0, 0, 0, 0.35);
 }
 
@@ -254,6 +255,36 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
+}
+
+.header-icon-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon-link .header-icon-svg {
+    width: 18px;
+}
+
+.header-icon-badge {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+
+    background: #ac1a1a;
+    color: #fff;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
 }
 
 .header-icon-svg {
