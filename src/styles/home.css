@@ -393,70 +393,41 @@
 ======================================== */
 
 .brand-section {
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    grid-template-columns: 50% 50%;
-
-    height: 1080px;
+    padding: 120px 24px;
 
     margin: 0 auto;
-}
-
-.brand-visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: url(../assets/main-banner013.png) no-repeat center;
-
-    background-size: cover;
-}
-
-.brand-pill {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 185px;
-    height: 74px;
-
-    border: 2px solid #fff;
-    border-radius: 45px;
-
-    color: #fff;
-
-    font-size: 18px;
-    font-weight: 700;
 }
 
 .brand-copy {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
+    text-align: center;
 
-.brand-eyebrow {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 16px;
-    letter-spacing: -0.01px;
+    max-width: 720px;
 }
 
 .brand-copy h2 {
-    margin: 0 0 4rem;
+    margin: 0 0 2.5rem;
 
-    font-size: 42px;
-    font-weight: 800;
+    font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.15;
+    font-weight: 700;
+    color: #1a1a1a;
 }
 
 .brand-copy p {
-    margin: 0 0 3rem;
+    margin: 0 0 2.5rem;
     text-align: center;
-    color: #888;
-    font-weight: 200;
-    font-size: 22px;
-    line-height: 1.5;
+    color: #6b6b6b;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 .brand-more-btn {
@@ -464,7 +435,6 @@
     justify-content: center;
     align-items: center;
     width: 150px;
-    margin-top: 5rem;
     padding: 20px 20px;
     border-radius: 100px;
     background: var(--brown);
@@ -740,19 +710,19 @@
 }
 
 .gallery-a {
-    background: url(../assets/main-banner03-1.png) no-repeat center;
+    background: url(../assets/povelo/gallery-glow.jpg) no-repeat center;
 
     background-size: cover;
 }
 
 .gallery-b {
-    background: url(../assets/main-banner03-2.png) no-repeat center;
+    background: url(../assets/povelo/gallery-ingredient.jpg) no-repeat center;
 
     background-size: cover;
 }
 
 .gallery-c {
-    background: url(../assets/main-banner03-3.png) no-repeat center;
+    background: url(../assets/povelo/gallery-wellness.jpg) no-repeat center;
 
     background-size: cover;
 }
@@ -792,7 +762,7 @@
     }
 
     .brand-section {
-        height: 760px;
+        padding: 80px 24px;
     }
 
     .brand-copy h2 {
@@ -925,24 +895,8 @@
     }
 
     .brand-section {
-        display: block;
-
         width: 100%;
-        height: auto;
-    }
-
-    .brand-visual {
-        width: 100%;
-        height: 420px;
-    }
-
-    .brand-pill {
-        width: 115px;
-        height: 45px;
-
-        border-width: 1px;
-
-        font-size: 12px;
+        padding: 60px 24px;
     }
 
     .brand-copy {
@@ -950,21 +904,13 @@
 
         width: 100%;
 
-        padding: 55px 25px;
-
         text-align: center;
-    }
-
-    .brand-eyebrow {
-        margin-bottom: 13px;
-
-        font-size: 10px;
     }
 
     .brand-copy h2 {
         margin-bottom: 18px;
 
-        font-size: 26px;
+        font-size: 32px;
     }
 
     .brand-copy p {
@@ -976,7 +922,6 @@
         width: 90px;
         height: 30px;
 
-        margin-top: 20px;
         padding: 0;
 
         font-size: 11px;
@@ -1123,7 +1068,7 @@
         width: 100%;
         height: auto;
 
-        aspect-ratio: 640 / 797;
+        aspect-ratio: 612 / 732;
     }
 }
 
@@ -1411,13 +1356,9 @@
 .product-promo-card--pink .product-promo-img {
     position: absolute;
     inset: 0;
-    width: 55%;
-    height: auto;
-    margin: auto;
-    top: 8%;
-    right: 6%;
-    left: auto;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-promo-card--beige .product-promo-img {
