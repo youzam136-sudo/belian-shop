@@ -7,11 +7,13 @@ function BrandSection() {
         <section className="brand-section">
             <div ref={copyRef} className={revealClass("brand-copy", copyVisible)}>
                 <h2>
-                    Positive ON
-                    <br />
-                    Vital Stay
+                    <span className="brand-copy-line">
+                        <span>Positive ON</span>
+                    </span>
+                    <span className="brand-copy-line">
+                        <span>Vital Stay</span>
+                    </span>
                 </h2>
-
                 <p>
                     포벨로는 눈에 보이는 피부 고민에만 집중하지 않습니다.
                     <br />
