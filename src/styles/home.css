@@ -1605,7 +1605,7 @@
     position: absolute;
     top: 694px;
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -229px;
 
     width: 458px;
     text-align: center;
