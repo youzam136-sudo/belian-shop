@@ -30,6 +30,7 @@
 }
 
 .hero-copy {
+    flex: 0 1 480px;
     max-width: 480px;
     color: #1a1a1a;
 }
@@ -58,8 +59,7 @@
 }
 
 .hero-visual {
-    flex-shrink: 0;
-    width: 46%;
+    flex: 0 0 46%;
     max-width: 620px;
 }
 
