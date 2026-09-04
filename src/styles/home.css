@@ -530,12 +530,13 @@
     align-items: center;
 
     max-width: 950px;
+    margin: 0 auto;
 }
 
 .brand-copy h2 {
     width: 950px;
     max-width: 100%;
-    margin: 0 0 33px;
+    margin: 0 auto 33px;
 
     text-align: center;
     font: normal normal normal 181px/206px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
@@ -546,7 +547,7 @@
 .brand-copy p {
     width: 611px;
     max-width: 100%;
-    margin: 0 0 2.5rem;
+    margin: 0 auto 2.5rem;
 
     text-align: left;
     font: normal normal normal 18px/28px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
@@ -1500,7 +1501,7 @@
 .product-promo-card {
     position: relative;
     aspect-ratio: 811 / 878;
-    border-radius: 20px;
+    border-radius: 41px;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
