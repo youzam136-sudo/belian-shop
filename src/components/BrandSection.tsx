@@ -15,7 +15,7 @@ function BrandSection() {
                     BRAND STORY
                 </span>
 
-                <h2>POVELO</h2>
+                <h2>BELIAN</h2>
 
                 <p>
                     브랜드 철학
