@@ -12,11 +12,38 @@
     padding-top: 115px;
 
     background-color: #fde4eb;
+
+    overflow: hidden;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+
     background-repeat: no-repeat;
     background-position: 0% 0%;
     background-size: cover;
 
-    overflow: hidden;
+    opacity: 0;
+
+    transition: opacity 1.2s var(--ease-premium);
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+        transition: opacity 0.3s ease;
+    }
 }
 
 .hero-inner {
@@ -29,9 +56,35 @@
 
 .hero-copy {
     position: absolute;
-    top: 337px;
+    top: 222px;
     left: 180px;
     color: #000000;
+}
+
+/* 페이지 진입 시 글자가 흐릿하게 번져있다가 또렷해지며 나타나는 효과 */
+.hero-copy.reveal {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(12px);
+    transition:
+        opacity 0.9s var(--ease-premium),
+        filter 0.9s var(--ease-premium),
+        transform 0.9s var(--ease-premium);
+}
+
+.hero-copy.reveal.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-copy.reveal {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+    }
 }
 
 .hero-copy h1 {
