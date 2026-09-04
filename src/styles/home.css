@@ -96,7 +96,6 @@
     color: #000000;
 }
 
-/* 페이지 진입 시 줄마다 순차적으로 아래에서 위로 또렷해지며 올라오는 효과 */
 .hero-copy-line {
     display: block;
     overflow: hidden;
@@ -1495,7 +1494,7 @@
 }
 
 .product-promo-wrap {
-    border-radius: 20px;
+    /* border-radius 제거: 자식(card)에서만 클리핑해서 모서리 이음새 방지 */
 }
 
 .product-promo-card {
@@ -1539,10 +1538,10 @@
 }
 
 .product-promo-info {
-    position: relative;
     z-index: 2;
     width: 100%;
-    padding: 28px 24px 28px;
+    padding: 100px 40px;
+    position: relative;
 }
 
 .product-promo-info h3 {
@@ -1572,6 +1571,21 @@
 
     padding: 10px 18px;
     border-radius: 999px;
+
+    transition:
+        background-color 0.35s var(--ease-premium),
+        transform 0.35s var(--ease-premium),
+        box-shadow 0.35s var(--ease-premium);
+}
+
+.product-promo-link:hover {
+    background: #f0f0f0;
+    transform: scale(1.06);
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.25);
+}
+
+.product-promo-link:active {
+    transform: scale(0.97);
 }
 
 @media (max-width: 768px) {
@@ -1582,6 +1596,10 @@
 
     .product-promo-card {
         aspect-ratio: 1 / 1;
+    }
+
+    .product-promo-info {
+        padding: 40px 24px;
     }
 }
 
