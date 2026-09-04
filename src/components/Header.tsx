@@ -74,7 +74,7 @@ function Header() {
                     className="header-logo"
                     onClick={closeMobileMenu}
                 >
-                    <img src={logoBlack} alt="BELIAN" className="header-logo-img" />
+                    <img src={logoBlack} alt="povelo" className="header-logo-img" />
                 </Link>
 
                 {/* =========================
