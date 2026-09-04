@@ -256,6 +256,18 @@
     gap: 7px;
 }
 
+.header-icon-svg {
+    width: 15px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.mobile-dropdown-button > span:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
 .header-arrow {
     width: 0;
     height: 0;
