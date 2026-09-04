@@ -11,32 +11,27 @@ function ProductPromoSection() {
 
     return (
         <section className="product-promo-section">
-            <div
-                ref={productRef}
-                className={revealClass("product-promo-card product-promo-card--pink", productVisible)}
-            >
-                <span className="product-promo-badge">MORE VIEW +</span>
-
-                <img
-                    src={promoProduct}
-                    alt="Wineberry Firming Collagen Jelly"
-                    className="product-promo-img"
-                />
-
-                <div className="product-promo-info">
-                    <h3>Wineberry Firming Collagen jelly</h3>
-                    <p>와인베리 퍼밍 콜라겐 젤리</p>
-                    <Link to="/shop/skin" className="product-promo-link">
-                        MORE VIEW +
-                    </Link>
+            <div ref={productRef} className={revealClass("product-promo-wrap", productVisible)}>
+                <div className="product-promo-card product-promo-card--pink">
+                    <span className="product-promo-badge">MORE VIEW +</span>
+                    <img
+                        src={promoProduct}
+                        alt="Wineberry Firming Collagen Jelly"
+                        className="product-promo-img"
+                    />
+                    <div className="product-promo-info">
+                        <h3>Wineberry Firming Collagen jelly</h3>
+                        <p>와인베리 퍼밍 콜라겐 젤리</p>
+                        <Link to="/shop/skin" className="product-promo-link">
+                            MORE VIEW +
+                        </Link>
+                    </div>
                 </div>
             </div>
-
-            <div
-                ref={grapesRef}
-                className={revealClass("product-promo-card product-promo-card--beige", grapesVisible, 1)}
-            >
-                <img src={promoGrapes} alt="" className="product-promo-img" />
+            <div ref={grapesRef} className={revealClass("product-promo-wrap", grapesVisible, 1)}>
+                <div className="product-promo-card product-promo-card--beige">
+                    <img src={promoGrapes} alt="" className="product-promo-img" />
+                </div>
             </div>
         </section>
     );
