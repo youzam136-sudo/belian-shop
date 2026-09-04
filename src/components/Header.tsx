@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 import logoBlack from "../assets/logo_black.png";
+import { MyPageIcon, CartIcon } from "./icons/HeaderIcons";
 
 function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -90,7 +91,8 @@ function Header() {
 
                     <div className="header-menu-item">
                         <Link to="/mypage" className="header-arrow-link">
-                            마이페이지 <span className="header-arrow" />
+                            <MyPageIcon className="header-icon-svg" /> 마이페이지{" "}
+                            <span className="header-arrow" />
                         </Link>
 
                         <div className="header-submenu header-submenu-compact">
@@ -103,8 +105,8 @@ function Header() {
                         </div>
                     </div>
 
-                    <Link to="/cart">
-                        장바구니 <b>0</b>
+                    <Link to="/cart" className="header-cart-link">
+                        <CartIcon className="header-icon-svg" /> 장바구니 <b>0</b>
                     </Link>
 
                     <div className="header-menu-item">
@@ -232,7 +234,9 @@ function Header() {
                                 setMypageOpen((prev) => !prev)
                             }
                         >
-                            <span>마이페이지</span>
+                            <span>
+                                <MyPageIcon className="header-icon-svg" /> 마이페이지
+                            </span>
 
                             <span
                                 className={`mobile-arrow ${mypageOpen ? "is-open" : ""
@@ -280,7 +284,7 @@ function Header() {
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >
-                        장바구니 <b>0</b>
+                        <CartIcon className="header-icon-svg" /> 장바구니 <b>0</b>
                     </Link>
 
                     {/* LANGUAGE */}
