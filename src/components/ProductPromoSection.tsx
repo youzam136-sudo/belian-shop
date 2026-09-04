@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import promoProduct from "../assets/prd-img.png";
-import promoLifestyle from "../assets/brand-daily.jpg";
+import promoProduct from "../assets/povelo/promo-product.jpg";
+import promoGrapes from "../assets/povelo/promo-grapes.jpg";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function ProductPromoSection() {
@@ -19,13 +19,13 @@ function ProductPromoSection() {
 
                 <img
                     src={promoProduct}
-                    alt="스킨케어 제품"
+                    alt="Wineberry Firming Collagen Jelly"
                     className="product-promo-img"
                 />
 
                 <div className="product-promo-info">
-                    <h3>Daily Moisture Serum</h3>
-                    <p>피부에 촉촉한 수분감을 채워주는 데일리 세럼</p>
+                    <h3>Wineberry Firming Collagen jelly</h3>
+                    <p>와인베리 퍼밍 콜라겐 젤리</p>
                     <Link to="/shop/skin" className="product-promo-link">
                         MORE VIEW +
                     </Link>
@@ -36,7 +36,7 @@ function ProductPromoSection() {
                 ref={grapesRef}
                 className={revealClass("product-promo-card product-promo-card--beige", grapesVisible, 1)}
             >
-                <img src={promoLifestyle} alt="" className="product-promo-img" />
+                <img src={promoGrapes} alt="" className="product-promo-img" />
             </div>
         </section>
     );
