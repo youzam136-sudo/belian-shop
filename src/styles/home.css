@@ -8,6 +8,8 @@
     width: 100%;
     min-width: var(--page-width);
     height: 620px;
+    margin-top: -70px;
+    padding-top: 70px;
 
     background: #f7d9e0;
 
