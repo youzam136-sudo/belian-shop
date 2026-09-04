@@ -38,6 +38,7 @@
 
 * {
         box-sizing: border-box;
+        font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 html {
@@ -106,5 +107,77 @@ img {
         transform: none;
         filter: none;
         transition: none;
+    }
+}
+
+/* ========================================
+   CUSTOM CURSOR
+======================================== */
+
+/* 데스크탑에서 커스텀 커서 사용 시 기본 커서는 숨긴다 */
+body.has-custom-cursor,
+body.has-custom-cursor * {
+    cursor: none !important;
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    will-change: transform;
+}
+
+.custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+
+    background: #1a1a1a;
+
+    transition: opacity 0.2s ease;
+}
+
+.custom-cursor-ring {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+
+    border: 1.5px solid #1a1a1a;
+
+    transition:
+        width 0.3s var(--ease-premium),
+        height 0.3s var(--ease-premium),
+        margin 0.3s var(--ease-premium),
+        border-color 0.3s var(--ease-premium),
+        background-color 0.3s var(--ease-premium),
+        opacity 0.3s var(--ease-premium);
+}
+
+.custom-cursor-ring.is-hovering {
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+
+    background: rgba(26, 26, 26, 0.08);
+    border-color: transparent;
+}
+
+.custom-cursor-ring.is-pressed {
+    width: 26px;
+    height: 26px;
+    margin: -13px 0 0 -13px;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+        display: none;
     }
 }
