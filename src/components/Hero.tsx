@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroProduct from "../assets/main-hero.jpg";
+import heroProduct from "../assets/povelo/hero-product.jpg";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function Hero() {
@@ -21,7 +21,7 @@ function Hero() {
                 </div>
 
                 <div className="hero-visual">
-                    <img src={heroProduct} alt="BELIAN 스킨케어 제품" />
+                    <img src={heroProduct} alt="Wineberry Firming Collagen Jelly" />
                 </div>
             </div>
         </section>
