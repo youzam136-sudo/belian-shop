@@ -529,28 +529,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 
-    max-width: 720px;
+    max-width: 950px;
 }
 
 .brand-copy h2 {
-    margin: 0 0 2.5rem;
+    width: 950px;
+    max-width: 100%;
+    margin: 0 0 33px;
 
-    font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
-    font-size: clamp(40px, 6vw, 72px);
-    line-height: 1.15;
-    font-weight: 700;
-    color: #1a1a1a;
+    text-align: center;
+    font: normal normal normal 181px/206px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
 }
 
 .brand-copy p {
+    width: 611px;
+    max-width: 100%;
     margin: 0 0 2.5rem;
-    text-align: center;
-    color: #6b6b6b;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
+
+    text-align: left;
+    font: normal normal normal 18px/28px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #707070;
 }
 
 .brand-more-btn {
@@ -1468,7 +1470,7 @@
     gap: 24px;
 
     width: var(--page-width);
-    margin: 60px auto;
+    margin: 126px auto 164px;
 }
 
 .product-promo-card {
@@ -1524,24 +1526,30 @@
 }
 
 .product-promo-info h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin: 0 0 6px;
+    text-align: left;
+    font: normal normal normal 28px/36px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    margin: 0 0 16px;
 }
 
 .product-promo-info p {
-    font-size: 14px;
-    color: #4a4a4a;
-    margin: 0 0 16px;
+    text-align: left;
+    font: normal normal normal 16px/21px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    margin: 0 0 64px;
 }
 
 .product-promo-link {
     display: inline-block;
     background: #ffffff;
-    color: #1a1a1a;
-    font-size: 13px;
-    font-weight: 700;
+
+    text-align: left;
+    font: normal normal bold 16px/21px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+
     padding: 10px 18px;
     border-radius: 999px;
 }
