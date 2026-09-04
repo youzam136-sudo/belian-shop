@@ -1,6 +1,6 @@
 :root {
-        --page-width: min(1660px, 94vw);
-        --content-width: min(1660px, 94vw);
+        --page-width: min(1400px, 94vw);
+        --content-width: min(1400px, 94vw);
         --brown: #9f7656;
         --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
         --ease-premium-soft: cubic-bezier(0.65, 0, 0.35, 1);
@@ -31,7 +31,6 @@
         font-display: swap;
 }
 
-/* 영문 대제목 등에서 사용할 라운드 서체. 한글은 자동으로 다음 폰트로 대체됩니다. */
 .font-maxi-round {
         font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
 }
@@ -110,7 +109,6 @@ img {
    CUSTOM CURSOR
 ======================================== */
 
-/* 데스크탑에서 커스텀 커서 사용 시 기본 커서는 숨긴다 */
 body.has-custom-cursor,
 body.has-custom-cursor * {
     cursor: none !important;
