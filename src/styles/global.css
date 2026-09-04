@@ -1,6 +1,6 @@
 :root {
-        --page-width: min(1310px, 94vw);
-        --content-width: min(1597px, 94vw);
+        --page-width: min(1800px, 94vw);
+        --content-width: min(1800px, 94vw);
         --brown: #9f7656;
         --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
         --ease-premium-soft: cubic-bezier(0.65, 0, 0.35, 1);
@@ -52,8 +52,6 @@ body,
         margin: 0;
 }
 
-
-
 body {
     margin: 0;
     background: #fff;
@@ -73,7 +71,6 @@ img {
     width: 100%;
 }
 
-
 /* ========================================
    SCROLL REVEAL (컨텐츠 등장 페이드인)
 ======================================== */
@@ -82,7 +79,6 @@ img {
     opacity: 0;
     transform: translateY(32px) scale(0.97);
     filter: blur(6px);
-
     transition:
         opacity 0.9s var(--ease-premium),
         transform 0.9s var(--ease-premium),
@@ -126,11 +122,8 @@ body.has-custom-cursor * {
     top: 0;
     left: 0;
     z-index: 9999;
-
     pointer-events: none;
-
     border-radius: 50%;
-
     will-change: transform;
 }
 
@@ -138,9 +131,7 @@ body.has-custom-cursor * {
     width: 6px;
     height: 6px;
     margin: -3px 0 0 -3px;
-
     background: #1a1a1a;
-
     transition: opacity 0.2s ease;
 }
 
@@ -148,9 +139,7 @@ body.has-custom-cursor * {
     width: 34px;
     height: 34px;
     margin: -17px 0 0 -17px;
-
     border: 1.5px solid #1a1a1a;
-
     transition:
         width 0.3s var(--ease-premium),
         height 0.3s var(--ease-premium),
@@ -164,7 +153,6 @@ body.has-custom-cursor * {
     width: 64px;
     height: 64px;
     margin: -32px 0 0 -32px;
-
     background: rgba(26, 26, 26, 0.08);
     border-color: transparent;
 }
