@@ -123,14 +123,15 @@
     align-items: center;
     gap: 60px;
     width: max-content;
-    animation: pv-footer-marquee-scroll 18s linear infinite;
+    animation: pv-footer-marquee-scroll 22s linear infinite;
+    will-change: transform;
 }
 
 .pv-footer-marquee-track span {
     color: #000;
     white-space: nowrap;
     font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
-    font-size: 150px;
+    font-size: 359px;
     line-height: 1;
 }
 
@@ -167,5 +168,9 @@
 
     .pv-footer-marquee {
         padding: 1px 0 49px;
+    }
+
+    .pv-footer-marquee-track span {
+        font-size: 150px;
     }
 }
