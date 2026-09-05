@@ -899,7 +899,10 @@
     /* ---------- BRAND ---------- */
 
     .brand-section {
+        display: grid;
+        grid-template-columns: 50% 50%;
         width: 100%;
+        height: 320px;
         padding: 20px 24px;
     }
 
