@@ -4,9 +4,9 @@ import youtubeIcon from "../assets/icons/youtube.svg";
 
 function Footer() {
     return (
-        <footer className="footer">
-            <div className="footer-top">
-                <div className="footer-col footer-col--brand">
+        <footer className="pv-footer">
+            <div className="pv-footer-top">
+                <div className="pv-footer-col pv-footer-col--brand">
                     <p>
                         긍정 스위치를 켜고
                         <br />
@@ -15,25 +15,28 @@ function Footer() {
                     <small>© 2026 belian</small>
                 </div>
 
-                <div className="footer-col footer-col--info">
+                <div className="pv-footer-col pv-footer-col--info">
                     <p>
-                        상호명 주식회사 벨리안 &nbsp;대표자 김미나
+                        <span className="pv-footer-label">상호명</span> 주식회사 벨리안{" "}
+                        <span className="pv-footer-value">대표자 김미나</span>
                         <br />
-                        고객센터 010-3620-2562
+                        <span className="pv-footer-label">고객센터</span>{" "}
+                        <span className="pv-footer-value">010-3620-2562</span>
                         <br />
-                        주소 대전시 서구 남선로68
+                        <span className="pv-footer-label">주소</span> 대전시 서구 남선로68
                         <br />
-                        개인정보보호책임자 김미나(mnkim@belian.com)
+                        <span className="pv-footer-label">개인정보보호책임자</span> 김미나
+                        (mnkim@belian.com)
                     </p>
                 </div>
 
-                <div className="footer-col footer-col--links">
-                    <nav className="footer-links">
+                <div className="pv-footer-col pv-footer-col--links">
+                    <nav className="pv-footer-links">
                         <a href="#">이용약관</a>
                         <a href="#">개인정보처리방침</a>
                         <a href="#">이용안내</a>
                     </nav>
-                    <div className="footer-socials">
+                    <div className="pv-footer-socials">
                         <a href="#" aria-label="Instagram">
                             <img src={instagramIcon} alt="Instagram" />
                         </a>
@@ -44,8 +47,8 @@ function Footer() {
                 </div>
             </div>
 
-            <div className="footer-marquee">
-                <div className="footer-marquee-track">
+            <div className="pv-footer-marquee">
+                <div className="pv-footer-marquee-track">
                     <span>povelo</span>
                     <span>povelo</span>
                     <span>povelo</span>
