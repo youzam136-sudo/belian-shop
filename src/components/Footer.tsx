@@ -56,6 +56,13 @@ function Footer() {
                     <span>povelo</span>
                     <span>povelo</span>
                     <span>povelo</span>
+
+                     <span>povelo</span>
+                    <span>povelo</span>
+                    <span>povelo</span>
+                    <span>povelo</span>
+               
+                
                 </div>
             </div>
         </footer>
