@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/header.css";
 import logoBlack from "../assets/logo_black.png";
 import { MyPageIcon, CartIcon } from "./icons/HeaderIcons";
 
 function Header() {
+    const headerRef = useRef<HTMLElement>(null);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [communityOpen, setCommunityOpen] = useState(false);
     const [mypageOpen, setMypageOpen] = useState(false);
@@ -30,6 +31,30 @@ function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // 실제 렌더링된 헤더 높이를 측정해서 CSS 변수(--header-height)로 저장.
+    // 모바일 메뉴가 헤더 바로 아래 정확히 붙도록, 고정 px값 대신 이 변수를 사용한다.
+    useEffect(() => {
+        const updateHeaderHeight = () => {
+            if (headerRef.current) {
+                const height = headerRef.current.getBoundingClientRect().height;
+                document.documentElement.style.setProperty(
+                    "--header-height",
+                    `${height}px`
+                );
+            }
+        };
+
+        updateHeaderHeight();
+
+        window.addEventListener("resize", updateHeaderHeight);
+        const timeoutId = window.setTimeout(updateHeaderHeight, 50);
+
+        return () => {
+            window.removeEventListener("resize", updateHeaderHeight);
+            window.clearTimeout(timeoutId);
+        };
+    }, [mobileOpen]);
+
     const closeMobileMenu = () => {
         setMobileOpen(false);
         setCommunityOpen(false);
@@ -37,7 +62,10 @@ function Header() {
     };
 
     return (
-        <header className={`header${isScrolled ? " is-scrolled" : ""}`}>
+        <header
+            ref={headerRef}
+            className={`header${isScrolled ? " is-scrolled" : ""}`}
+        >
             <div className="header-inner">
                 {/* =========================
             PC LEFT
