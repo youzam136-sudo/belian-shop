@@ -900,7 +900,7 @@
 
     .brand-section {
         width: 100%;
-        padding: 40px 24px;
+        padding: 20px 24px;
     }
 
     .brand-copy {
@@ -909,16 +909,16 @@
     }
 
     .brand-copy h2 {
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         font-size: 44px;
         line-height: 1.15;
     }
 
     .brand-copy p {
-        width: 100%;
-        font-size: 13px;
-        line-height: 1.8;
         text-align: center;
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.8;
     }
 
     .brand-more-btn {
@@ -988,13 +988,12 @@
     }
 
     .lifestyle-banner-copy h2 {
+        text-align: center;
+        letter-spacing: 0;
+        color: #000;
         width: 100%;
         margin: 0 0 12px;
-
-        text-align: center;
-        font: 40px/50px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
-        letter-spacing: 0px;
-        color: #000000;
+        font: 22px/32px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     }
 
     .lifestyle-banner-btn {
