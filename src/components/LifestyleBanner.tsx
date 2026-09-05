@@ -3,16 +3,19 @@ import lifestyleModel from "../assets/povelo/lifestyle-model.jpg";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
 function LifestyleBanner() {
-    const { ref, isVisible } = useReveal<HTMLDivElement>();
+    const { ref: bgRef, isVisible: bgVisible } = useReveal<HTMLDivElement>();
+    const { ref: copyRef, isVisible: copyVisible } = useReveal<HTMLDivElement>();
 
     return (
-        <section
-            className="lifestyle-banner"
-            style={{ backgroundImage: `url(${lifestyleModel})` }}
-        >
+        <section className="lifestyle-banner">
             <div
-                ref={ref}
-                className={revealClass("lifestyle-banner-copy", isVisible)}
+                ref={bgRef}
+                className={`lifestyle-banner-bg${bgVisible ? " is-visible" : ""}`}
+                style={{ backgroundImage: `url(${lifestyleModel})` }}
+            />
+            <div
+                ref={copyRef}
+                className={revealClass("lifestyle-banner-copy", copyVisible)}
             >
                 <h2>
                     Beyond Visible Results,
