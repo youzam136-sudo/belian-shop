@@ -703,6 +703,24 @@
 ========================================================= */
 
 @media (max-width: 1024px) {
+   .brand-copy p {
+    width: 340px;
+    max-width: 100%;
+    margin: 0 auto 2.5rem;
+    text-align: left;
+    font: normal normal normal 18px/28px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    letter-spacing: 0px;
+    color: #707070;
+}
+   
+   .brand-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+    margin: 0 auto;
+}
+   
     .hero {
         height: 620px;
     }
