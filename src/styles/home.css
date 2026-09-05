@@ -805,11 +805,11 @@
     .hero-copy {
         position: absolute !important;
         top: 36% !important;
-        left: 1% !important;
+        left: 24px !important;
 
         width: 88% !important;
         max-width: 100% !important;
-        text-align: center !important;
+        text-align: left !important;
     }
 
     .hero-copy h1 {
@@ -818,7 +818,7 @@
         margin: 0 0 16px !important;
         font-size: 34px !important;
         line-height: 1.2 !important;
-        text-align: center !important;
+        text-align: left !important;
     }
 
     .hero-copy p {
@@ -827,13 +827,13 @@
         margin: 0 0 22px !important;
         font-size: 14px !important;
         line-height: 1.6 !important;
-        text-align: center !important;
+        text-align: left !important;
     }
 
     .hero-more-btn {
         width: fit-content !important;
         height: auto !important;
-        margin: 0 auto !important;
+        margin: 0 !important;
         padding: 10px 20px !important;
         font-size: 13px !important;
     }
