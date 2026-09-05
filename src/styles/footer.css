@@ -1,5 +1,7 @@
 .footer {
     width: 100%;
+    min-width: var(--page-width);
+    color: #fff;
 }
 
 .footer-top {
@@ -17,6 +19,7 @@
 .footer-col {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .footer-col--brand p {
@@ -33,6 +36,11 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
+.footer-col--info {
+    align-items: center;
+    text-align: center;
+}
+
 .footer-col--info p {
     margin: 0;
 
@@ -44,6 +52,7 @@
 .footer-col--links {
     align-items: flex-end;
     justify-content: space-between;
+    text-align: right;
 }
 
 .footer-links {
@@ -93,15 +102,14 @@
 .footer-socials img {
     width: 16px;
     height: 16px;
+    display: block;
 }
 
 /* 하단 무한 마퀴 */
 .footer-marquee {
+    background: #fff;
     width: 100%;
     overflow: hidden;
-
-    background: #fff;
-    padding: 20px 0;
 }
 
 .footer-marquee-track {
@@ -115,13 +123,12 @@
 }
 
 .footer-marquee-track span {
-    font-size: 140px;
-    font-weight: 700;
-    line-height: 1;
     color: #000;
     white-space: nowrap;
-
     font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
+    font-size: 390px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 @keyframes footer-marquee-scroll {
@@ -148,8 +155,10 @@
         padding: 40px 24px;
     }
 
+    .footer-col--info,
     .footer-col--links {
         align-items: flex-start;
+        text-align: left;
     }
 
     .footer-links {
@@ -157,6 +166,6 @@
     }
 
     .footer-marquee-track span {
-        font-size: 60px;
+        font-size: 100px;
     }
 }
