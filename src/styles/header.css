@@ -4,15 +4,13 @@
 
 .header {
     position: sticky;
-    top: 44px;
+    top: 24px;
     z-index: 1000;
 
     width: 1660px;
-    max-width: calc(100% - 260px);
-    min-width: 0;
-    height: 71px;
+    max-width: calc(100% - 45px);
 
-    margin: 44px auto 0;
+    margin: 24px auto 0;
     border: 1px solid #fff;
     border-radius: 999px;
 
@@ -22,12 +20,17 @@
     align-items: center;
     justify-content: center;
 
-    /* 반응형 브레이크포인트에서 높이가 바뀔 때 부드럽게 전환 */
     transition: height 0.5s var(--ease-premium), background-color 0.3s var(--ease-premium), border-radius 0.3s var(--ease-premium), margin 0.3s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
 }
 
 .header.is-scrolled {
     box-shadow: 0 8px 24px -18px rgba(0, 0, 0, 0.35);
+}
+
+/* 모바일 메뉴가 열려있을 때는 헤더를 불투명하게 바꿔서
+   뒤 배경(히어로 이미지 등)이 비치지 않게 한다 */
+.header:has(.mobile-menu.is-open) {
+    background: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -381,7 +384,6 @@
   ======================================== */
 
     .header {
-        min-width: 0;
         height: 70px;
     }
 
@@ -471,7 +473,7 @@
     .mobile-menu {
         position: fixed;
 
-        top: 70px;
+        top: 94px;
         left: 0;
 
         z-index: 999;
@@ -479,7 +481,7 @@
         display: block;
 
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 94px);
 
         overflow-y: auto;
 
