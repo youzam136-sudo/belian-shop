@@ -5,12 +5,10 @@
 
 .pv-footer-top {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
-
     width: 100%;
     padding: 43px 80px 72px;
-
     background: #000;
     color: #fff;
 }
@@ -24,7 +22,6 @@
 
 .pv-footer-col--brand p {
     margin: 0 0 16px;
-
     font-size: 15px;
     font-weight: 600;
     line-height: 1.5;
@@ -42,7 +39,6 @@
 
 .pv-footer-col--info p {
     margin: 0;
-
     font-size: 13px;
     line-height: 2;
     font-weight: 400;
@@ -63,12 +59,6 @@
     align-items: flex-end;
 }
 
-.pv-footer-links-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
 .pv-footer-links {
     display: flex;
     flex-direction: column;
@@ -80,7 +70,6 @@
     font-size: 13px;
     color: rgba(255, 255, 255, 0.75);
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
@@ -88,25 +77,25 @@
     color: #fff;
 }
 
+.pv-footer-col--socials {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
 .pv-footer-socials {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-
-    margin-top: 16px;
 }
 
 .pv-footer-socials a {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 34px;
     height: 34px;
-
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.12);
-
     transition: background 0.2s ease;
 }
 
@@ -130,9 +119,7 @@
     display: flex;
     align-items: center;
     gap: 60px;
-
     width: max-content;
-
     animation: pv-footer-marquee-scroll 18s linear infinite;
 }
 
@@ -149,7 +136,6 @@
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
@@ -163,16 +149,14 @@
 
 @media (max-width: 768px) {
     .pv-footer-top {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 30px;
-
         padding: 40px 24px;
     }
 
-    .pv-footer-col--info,
-    .pv-footer-col--links {
+    .pv-footer-col--links,
+    .pv-footer-col--socials {
         align-items: flex-start;
-        text-align: left;
     }
 
     .pv-footer-links {
