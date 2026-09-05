@@ -455,12 +455,14 @@
 
     /* ========================================
      MOBILE MENU PANEL
+     실제 렌더링된 헤더 높이(JS로 측정해 --header-height에 저장)를
+     그대로 사용해서 헤더 바로 아래 정확히 붙게 한다.
   ======================================== */
 
     .mobile-menu {
         position: fixed;
 
-        top: 94px;
+        top: var(--header-height, 70px);
         left: 0;
 
         z-index: 999;
@@ -468,7 +470,7 @@
         display: block;
 
         width: 100vw;
-        height: calc(100vh - 94px);
+        height: calc(100vh - var(--header-height, 70px));
 
         overflow-y: auto;
 
