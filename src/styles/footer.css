@@ -9,7 +9,7 @@
     align-items: flex-start;
 
     width: 100%;
-    padding: 43px 80px 72px;
+    padding: 130px 80px 210px;
 
     background: #000;
     color: #fff;
@@ -24,9 +24,9 @@
 
 .pv-footer-col--brand p {
     margin: 0 0 16px;
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #fff;
 }
 
@@ -42,7 +42,7 @@
 .pv-footer-col--info p {
     margin: 0;
     font-size: 13px;
-    line-height: 2;
+    line-height: 2.4;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.55);
 }
@@ -65,7 +65,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    gap: 18px;
 }
 
 .pv-footer-links a {
@@ -94,20 +94,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    transition: background 0.2s ease;
+    transition: none;
 }
 
 .pv-footer-socials a:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: transparent;
 }
 
 .pv-footer-socials img {
-    width: 16px;
-    height: 16px;
+    width: 50px;
+    height: 50px;
     display: block;
 }
 
