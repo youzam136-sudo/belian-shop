@@ -12,7 +12,7 @@ function Footer() {
                         <br />
                         활력을 머무르게 하다
                     </p>
-                    <small>© 2026 belian</small>
+                    <small>© 2026 velian</small>
                 </div>
 
                 <div className="pv-footer-col pv-footer-col--info">
@@ -26,7 +26,7 @@ function Footer() {
                         <span className="pv-footer-label">주소</span> 대전시 서구 남선로68
                         <br />
                         <span className="pv-footer-label">개인정보보호책임자</span> 김미나
-                        (mnkim@belian.com)
+                        (mnkim@velian.com)
                     </p>
                 </div>
 
