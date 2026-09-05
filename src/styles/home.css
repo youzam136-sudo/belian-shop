@@ -896,9 +896,22 @@
 }
 
 .gallery-item {
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
+    position: relative;
+
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 29px !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.5s var(--ease-premium),
+        box-shadow 0.5s var(--ease-premium);
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.35);
 }
 
 .gallery-a {
