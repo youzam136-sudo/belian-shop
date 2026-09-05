@@ -249,18 +249,14 @@
 
 .section-heading h2 {
     margin: 0;
-
     color: #111;
-
     font-size: 40px;
     font-weight: 500;
 }
 
 .section-heading p {
     margin: 20px 0 0;
-
     color: #a27d60;
-
     font-weight: 400;
     font-size: 21px;
 }
@@ -268,14 +264,12 @@
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     column-gap: 28px;
     row-gap: 53px;
 }
 
 .product-card {
     min-width: 0;
-
     transition: transform 0.5s var(--ease-premium);
 }
 
@@ -285,7 +279,6 @@
 
 .product-link {
     display: block;
-
     color: inherit;
     text-decoration: none;
 }
@@ -293,12 +286,9 @@
 .product-thumb {
     width: 100%;
     height: 230px;
-
     overflow: hidden;
-
     background: #e5e4e1;
     box-shadow: 0 0 0 rgba(22, 22, 22, 0);
-
     transition: box-shadow 0.5s var(--ease-premium);
 }
 
@@ -308,73 +298,14 @@
 
 .product-img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition: transform 0.6s var(--ease-premium);
 }
 
 .product-card:hover .product-img {
     transform: scale(1.06);
-}
-
-.mock-product {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(circle at 70% 30%,
-            #fafafa 0,
-            #e7e6e3 45%,
-            #c4c2be 100%);
-}
-
-.mock-product::before {
-    content: "";
-
-    position: absolute;
-
-    top: 46%;
-    left: 50%;
-
-    width: 43px;
-    height: 145px;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 6px 6px 10px 10px;
-
-    background:
-        linear-gradient(90deg,
-            #e4e4e2,
-            #ffffff,
-            #d9d9d7);
-
-    box-shadow:
-        0 10px 20px rgba(0, 0, 0, 0.08);
-}
-
-.mock-product::after {
-    content: "";
-
-    position: absolute;
-
-    top: 18%;
-    left: 50%;
-
-    width: 31px;
-    height: 20px;
-
-    transform: translateX(-50%);
-
-    background: #dededc;
 }
 
 .product-meta {
@@ -383,130 +314,41 @@
 
 .product-meta h3 {
     margin: 0 0 13px;
-
     color: #111;
-
     font-size: 21px;
     font-weight: 600;
-
     line-height: 1.4;
 }
 
 .product-description {
     margin: 0 0 2px;
-
     color: #707070;
-
     font-size: 16px;
     font-weight: 400;
-
     line-height: 1.6;
 }
 
 .product-price {
     padding: 0;
-
     background: none;
-
     color: #707070;
-
     font-size: 16px;
     font-weight: 400;
-
     line-height: 1.4;
 }
 
 .product-badge {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     min-width: 34px;
-
     margin-top: 20px;
     padding: 4px 13px 5px;
-
     background: #a57d5e;
     color: #fff;
-
     font-size: 15px;
     font-weight: 400;
-
     line-height: 1;
-}
-
-.section-more {
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 25px;
-
-    margin-top: 6rem;
-}
-
-.section-more button,
-.section-more a {
-    position: relative;
-    z-index: 0;
-
-    width: 240px;
-    padding: 9px 40px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    border: 1px solid #707070;
-    background: #fff;
-    color: #707070;
-
-    font-size: 21px;
-    cursor: pointer;
-    overflow: hidden;
-
-    transition: color 0.5s var(--ease-premium);
-}
-
-.section-more button::before,
-.section-more a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: #997255;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s var(--ease-premium);
-}
-
-.section-more button:hover::before,
-.section-more a:hover::before {
-    transform: scaleX(1);
-}
-
-.section-more button:hover,
-.section-more a:hover {
-    color: #fff;
-    border: 1px solid #997255;
-
-}
-
-.section-more button:hover span,
-.section-more a:hover span {
-    color: #fff;
-}
-
-.section-more span {
-    color: #707070;
-    font-size: 21px;
-    padding-left: 20%;
-}
-
-.section-more a {
-    text-decoration: none;
 }
 
 
@@ -518,9 +360,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 120px 24px;
-
     margin: 0 auto;
 }
 
@@ -529,7 +369,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     max-width: 1600px;
     margin: 0 auto;
     padding-left: 0 !important;
@@ -539,7 +378,6 @@
 .brand-copy h2 {
     max-width: 100%;
     margin: 0 auto 33px;
-
     text-align: center;
     font: normal normal normal 150px/165px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     letter-spacing: 0px;
@@ -595,7 +433,6 @@
     width: 611px;
     max-width: 100%;
     margin: 0 auto 2.5rem;
-
     text-align: left;
     font: normal normal normal 18px/28px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     letter-spacing: 0px;
@@ -621,530 +458,6 @@
     opacity: 0.85;
 }
 
-/* ========================================
-   KEYWORD
-======================================== */
-
-.keyword-section {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-
-    gap: 30px;
-
-    width: var(--content-width);
-
-    margin: 0 auto;
-
-    padding: 112px 0 130px;
-}
-
-.keyword-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.keyword-header h2 {
-    margin: 0 0 1rem;
-
-    font-size: 28px;
-}
-
-.keyword-header p {
-    font-size: 15px;
-    font-weight: 200;
-}
-
-.keyword-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 5rem;
-    gap: 8px;
-}
-
-.keyword-list button {
-    min-width: 64px;
-    padding: 8px 20px;
-
-    border: 0;
-    border-radius: 50px;
-
-    background: #f2f2f2;
-    color: #777;
-
-    font-size: 16px;
-    font-weight: 300;
-    cursor: pointer;
-
-    transition:
-        background-color 0.3s var(--ease-premium),
-        color 0.3s var(--ease-premium),
-        transform 0.3s var(--ease-premium);
-}
-
-.keyword-list button:hover,
-.keyword-list button.is-active {
-    background: #E0E0E0;
-    color: #000;
-    font-weight: 500;
-}
-
-.keyword-list button:active {
-    transform: scale(0.93);
-}
-
-.keyword-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 26px;
-}
-
-.keyword-grid article {
-    animation: keyword-pop-in 0.6s var(--ease-bounce) both;
-}
-
-.keyword-grid article:nth-child(1) { animation-delay: 0s; }
-.keyword-grid article:nth-child(2) { animation-delay: 0.08s; }
-.keyword-grid article:nth-child(3) { animation-delay: 0.16s; }
-
-@keyframes keyword-pop-in {
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.94);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .keyword-grid article {
-        animation: none;
-    }
-}
-
-.keyword-thumb {
-    overflow: hidden;
-
-    background: #ddd;
-}
-
-.mock-product.small::before {
-    width: 47px;
-    height: 125px;
-}
-
-.keyword-grid h3 {
-    margin: 13px 0 8px;
-    font-weight: 300;
-    font-size: 21px;
-    text-align: center;
-}
-
-.keyword-grid p {
-    margin: 0;
-
-    color: #888;
-    text-align: center;
-    font-size: 12px;
-}
-
-
-/* ========================================
-   GALLERY
-======================================== */
-
-.gallery-section {
-    position: relative;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-
-    width: var(--content-width);
-    height: 680px;
-    padding: 60px 0;
-
-    margin: 0 auto;
-}
-
-.gallery-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 100vw;
-    height: 100%;
-    z-index: -1;
-
-    background: #F5F5F5;
-    opacity: 0.24;
-}
-
-.gallery-item {
-    position: relative;
-    display: block;
-
-    border-radius: 29px !important;
-    overflow: hidden;
-}
-
-.gallery-item-bg {
-    position: absolute;
-    inset: 0;
-
-    background-size: cover !important;
-    background-position: center !important;
-
-    transform: scale(1);
-    transition: transform 0.6s var(--ease-premium);
-}
-
-.gallery-item:hover .gallery-item-bg {
-    transform: scale(1.08);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .gallery-item-bg {
-        transition: none;
-    }
-}
-
-.gallery-a {
-    background: url(../assets/povelo/gallery-glow.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.gallery-b {
-    background: url(../assets/povelo/gallery-ingredient.jpg) no-repeat center;
-    background-size: cover;
-}
-
-.gallery-c {
-    background: url(../assets/povelo/gallery-wellness.jpg) no-repeat center;
-    background-size: cover;
-}
-
-@media (max-width: 1024px) {
-    .hero {
-        height: 620px;
-    }
-
-    .hero-copy {
-        top: 160px;
-        left: 60px;
-    }
-
-    .hero-copy h1 {
-        width: auto;
-        height: auto;
-        margin: 0 0 22px;
-
-        font-size: 52px;
-        line-height: 1.2;
-    }
-
-    .hero-copy p {
-        width: auto;
-        height: auto;
-        margin: 0 0 30px;
-
-        font-size: 17px;
-    }
-
-    .hero-more-btn {
-        width: auto;
-        height: auto;
-        padding: 12px 22px;
-    }
-
-    .product-section {
-        padding: 6rem 0 9rem;
-    }
-
-    .section-heading h2 {
-        font-size: 30px;
-    }
-
-    .section-heading p {
-        font-size: 16px;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-
-        column-gap: 20px;
-        row-gap: 40px;
-    }
-
-    .brand-section {
-        padding: 80px 24px;
-    }
-
-    .brand-copy h2 {
-        margin: 0 0 2.2rem;
-
-        font-size: 60px;
-        line-height: 1.15;
-    }
-
-    .brand-copy p {
-        font-size: 17px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .hero {
-        width: 100%;
-        min-width: 0;
-        height: 520px;
-        margin-top: -115px;
-        padding-top: 115px;
-    }
-
-    .hero-inner {
-        width: 88%;
-        height: 100%;
-        justify-content: center;
-    }
-
-    .hero-copy {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        width: 88%;
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .hero-copy h1 {
-        width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .hero-copy p {
-        width: 100%;
-        height: auto;
-        margin-bottom: 24px;
-
-        font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .product-section {
-        width: 100%;
-
-        padding: 65px 18px 72px;
-    }
-
-    .section-heading {
-        margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-        font-size: 22px;
-    }
-
-    .section-heading p {
-        margin-top: 8px;
-
-        font-size: 13px;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        column-gap: 14px;
-        row-gap: 36px;
-    }
-
-    .product-thumb {
-        height: auto;
-        aspect-ratio: 1 / 1;
-    }
-
-    .product-meta {
-        padding-top: 10px;
-    }
-
-    .product-meta h3 {
-        margin-bottom: 8px;
-
-        font-size: 14px;
-    }
-
-    .product-description {
-        min-height: 0;
-
-        margin-bottom: 6px;
-
-        font-size: 12px;
-        line-height: 1.5;
-    }
-
-    .product-price {
-        font-size: 12px;
-    }
-
-    .product-badge {
-        min-width: 30px;
-        height: 18px;
-
-        margin-top: 8px;
-        padding: 0 8px;
-
-        font-size: 10px;
-    }
-
-    .section-more {
-        margin-top: 45px;
-    }
-
-    .section-more button,
-    .section-more a {
-        width: 150px;
-        height: 36px;
-        font-size: 12px;
-        padding: 9px 20px;
-    }
-
-    .brand-section {
-        width: 100%;
-        padding: 60px 24px;
-    }
-
-    .brand-copy {
-        align-items: center;
-
-        width: 100%;
-
-        text-align: center;
-    }
-
-    .brand-copy h2 {
-        margin-bottom: 18px;
-
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .brand-copy p {
-        font-size: 13px;
-        line-height: 1.8;
-    }
-
-    .brand-more-btn {
-        width: 90px;
-        height: 30px;
-
-        padding: 0;
-
-        font-size: 11px;
-    }
-
-    .keyword-section {
-        display: block;
-
-        width: 100%;
-
-        padding: 65px 18px 75px;
-    }
-
-    .keyword-aside {
-        margin-bottom: 40px;
-    }
-
-    .keyword-aside h2 {
-        margin-bottom: 20px;
-
-        font-size: 18px;
-    }
-
-    .keyword-header p {
-        font-size: 15px;
-    }
-
-    .keyword-list {
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        margin: 3rem 0 2rem;
-
-        overflow-x: auto;
-
-        gap: 8px;
-
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .keyword-list::-webkit-scrollbar {
-        display: none;
-    }
-
-    .keyword-list button {
-        flex-shrink: 0;
-
-        min-width: 60px;
-
-        padding: 7px 14px;
-
-        font-size: 16px;
-
-        white-space: nowrap;
-    }
-
-    .keyword-grid {
-        display: block;
-    }
-
-    .keyword-grid article:not(:first-child) {
-        display: none;
-    }
-
-    .keyword-grid article {
-        margin-bottom: 0;
-    }
-
-    .keyword-thumb {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 1 / 1;
-    }
-
-    .keyword-grid h3 {
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .gallery-section {
-        display: block;
-
-        width: 100%;
-        height: auto;
-    }
-
-    .gallery-item {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 612 / 732;
-    }
-}
 
 /* ========================================
    PRODUCT PROMO SECTION (2분할: 상품 카드 + 이미지)
@@ -1154,13 +467,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-
     width: var(--page-width);
     margin: 126px auto 164px;
 }
 
 .product-promo-wrap {
-    /* border-radius 제거: 자식(card)에서만 클리핑해서 모서리 이음새 방지 */
 }
 
 .product-promo-card {
@@ -1185,7 +496,6 @@
     top: 24px;
     left: 24px;
     z-index: 2;
-
     background: #d8f95a;
     color: #1a1a1a;
     font-size: 13px;
@@ -1197,7 +507,6 @@
 .product-promo-img {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1229,15 +538,12 @@
 .product-promo-link {
     display: inline-block;
     background: #ffffff;
-
     text-align: left;
     font: normal normal bold 16px/21px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     letter-spacing: 0px;
     color: #000000;
-
     padding: 10px 18px;
     border-radius: 999px;
-
     transition:
         background-color 0.35s var(--ease-premium),
         transform 0.35s var(--ease-premium),
@@ -1254,20 +560,6 @@
     transform: scale(0.97);
 }
 
-@media (max-width: 768px) {
-    .product-promo-section {
-        grid-template-columns: 1fr;
-        margin: 40px auto;
-    }
-
-    .product-promo-card {
-        aspect-ratio: 1 / 1;
-    }
-
-    .product-promo-info {
-        padding: 40px 24px;
-    }
-}
 
 /* ========================================
    LIFESTYLE BANNER (풀블리드 이미지 + 카피)
@@ -1277,9 +569,7 @@
     position: relative;
     width: 100%;
     height: 1082px;
-
     overflow: hidden;
-
     margin: 0 auto;
 }
 
@@ -1287,10 +577,8 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-
     background-size: cover;
     background-position: center;
-
     transform: scale(1.12);
     transition: transform 1.8s var(--ease-premium-soft);
 }
@@ -1309,11 +597,9 @@
 .lifestyle-banner-copy {
     position: absolute;
     z-index: 2;
-
     top: 694px;
     left: 50%;
     margin-left: -229px;
-
     width: 458px;
     text-align: center;
 }
@@ -1321,7 +607,6 @@
 .lifestyle-banner-copy h2 {
     width: 458px;
     margin: 0 0 58px;
-
     text-align: center;
     font: normal normal normal 40px/50px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     letter-spacing: 0px;
@@ -1332,18 +617,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: 159px;
     height: 56px;
-
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 28px;
-
     text-align: left;
     font: normal normal bold 16px/21px "ABC Maxi Round Variable", "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
     letter-spacing: 0px;
     color: #000000;
-
     transition:
         background-color 0.35s var(--ease-premium),
         transform 0.35s var(--ease-premium),
@@ -1360,27 +641,386 @@
     transform: scale(0.97);
 }
 
-@media (max-width: 768px) {
-    .lifestyle-banner {
-        min-height: 420px;
+
+/* ========================================
+   GALLERY
+======================================== */
+
+.gallery-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: var(--content-width);
+    height: 680px;
+    padding: 60px 0;
+    margin: 0 auto;
+}
+
+.gallery-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    background: #F5F5F5;
+    opacity: 0.24;
+}
+
+.gallery-item {
+    position: relative;
+    display: block;
+    border-radius: 29px;
+    overflow: hidden;
+}
+
+.gallery-item-bg {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform 0.6s var(--ease-premium);
+}
+
+.gallery-item:hover .gallery-item-bg {
+    transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item-bg {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   반응형: 1024px 이하 (태블릿)
+========================================================= */
+
+@media (max-width: 1024px) {
+    .hero {
+        height: 620px;
+    }
+
+    .hero-copy {
+        top: 160px;
+        left: 60px;
+    }
+
+    .hero-copy h1 {
+        width: auto;
         height: auto;
-        padding: 60px 0;
+        margin: 0 0 22px;
+        font-size: 52px;
+        line-height: 1.2;
+    }
+
+    .hero-copy p {
+        width: auto;
+        height: auto;
+        margin: 0 0 30px;
+        font-size: 17px;
+    }
+
+    .hero-more-btn {
+        width: auto;
+        height: auto;
+        padding: 12px 22px;
+    }
+
+    .product-section {
+        padding: 6rem 0 9rem;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .section-heading p {
+        font-size: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+    }
+
+    .brand-section {
+        padding: 80px 24px;
+    }
+
+    .brand-copy h2 {
+        margin: 0 0 2.2rem;
+        font-size: 90px;
+        line-height: 1.1;
+    }
+
+    .brand-copy p {
+        font-size: 17px;
+    }
+
+    .product-promo-section {
+        width: 92%;
+    }
+
+    .product-promo-info {
+        padding: 60px 30px;
+    }
+
+    .lifestyle-banner {
+        height: 720px;
     }
 
     .lifestyle-banner-copy {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-        margin-left: 0;
+        top: auto;
+        bottom: 80px;
+    }
+}
 
-        width: 88%;
-        margin: 0 auto;
+
+/* =========================================================
+   반응형: 768px 이하 (모바일)
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        width: 100%;
+        min-width: 0;
+        height: 560px;
+        margin-top: -115px;
+        padding-top: 115px;
+    }
+
+    .hero-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-copy {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        width: 86% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    .hero-copy h1 {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 16px !important;
+
+        font-size: 34px !important;
+        line-height: 1.2 !important;
+
+        text-align: center !important;
+    }
+
+    .hero-copy p {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 22px !important;
+
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+
+        text-align: center !important;
+    }
+
+    .hero-more-btn {
+        width: fit-content !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 11px 22px !important;
+    }
+
+    /* ---------- PRODUCT SECTION ---------- */
+
+    .product-section {
+        width: 100%;
+        padding: 65px 18px 72px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .section-heading p {
+        margin-top: 8px;
+        font-size: 13px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 14px;
+        row-gap: 36px;
+    }
+
+    .product-thumb {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .product-meta {
+        padding-top: 10px;
+    }
+
+    .product-meta h3 {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+
+    .product-description {
+        margin-bottom: 6px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+
+    .product-badge {
+        min-width: 30px;
+        height: 18px;
+        margin-top: 8px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    /* ---------- BRAND ---------- */
+
+    .brand-section {
+        width: 100%;
+        padding: 60px 24px;
+    }
+
+    .brand-copy {
+        align-items: center;
+        width: 100%;
+    }
+
+    .brand-copy h2 {
+        margin-bottom: 20px;
+        font-size: 44px;
+        line-height: 1.15;
+    }
+
+    .brand-copy p {
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    .brand-more-btn {
+        width: 90px;
+        height: 30px;
+        padding: 0;
+        font-size: 11px;
+    }
+
+    /* ---------- PRODUCT PROMO SECTION ---------- */
+
+    .product-promo-section {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 16px;
+        margin: 60px auto;
+    }
+
+    .product-promo-card {
+        aspect-ratio: 1 / 1.05;
+        border-radius: 28px;
+    }
+
+    .product-promo-badge {
+        top: 16px;
+        left: 16px;
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .product-promo-info {
+        padding: 24px 20px;
+    }
+
+    .product-promo-info h3 {
+        font-size: 19px;
+        line-height: 1.3;
+        margin: 0 0 8px;
+    }
+
+    .product-promo-info p {
+        font-size: 13px;
+        margin: 0 0 20px;
+    }
+
+    .product-promo-link {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    /* ---------- LIFESTYLE BANNER ---------- */
+
+    .lifestyle-banner {
+        width: 100%;
+        height: 620px;
+    }
+
+    .lifestyle-banner-copy {
+        position: absolute;
+        top: auto;
+        bottom: 40px;
+        left: 50%;
+        margin-left: 0;
+        transform: translateX(-50%);
+        width: 86%;
     }
 
     .lifestyle-banner-copy h2 {
         width: 100%;
-        font-size: 24px;
+        margin: 0 0 24px;
+        font-size: 22px;
         line-height: 1.35;
+    }
+
+    .lifestyle-banner-btn {
+        width: 140px;
+        height: 46px;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
+    /* ---------- GALLERY ---------- */
+
+    .gallery-section {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        gap: 16px;
+        padding: 40px 0;
+    }
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 }
