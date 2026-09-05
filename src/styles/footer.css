@@ -61,7 +61,7 @@
 
 .pv-footer-col--links {
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: right;
 }
 
@@ -86,9 +86,10 @@
 
 .pv-footer-socials {
     display: flex;
+    justify-content: flex-end;
     gap: 10px;
 
-    margin-top: auto;
+    margin-top: 20px;
 }
 
 .pv-footer-socials a {
