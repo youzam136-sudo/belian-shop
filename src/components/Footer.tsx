@@ -31,20 +31,21 @@ function Footer() {
                 </div>
 
                 <div className="pv-footer-col pv-footer-col--links">
-                    <div className="pv-footer-links-group">
-                        <nav className="pv-footer-links">
-                            <a href="#">이용약관</a>
-                            <a href="#">개인정보처리방침</a>
-                            <a href="#">이용안내</a>
-                        </nav>
-                        <div className="pv-footer-socials">
-                            <a href="#" aria-label="Instagram">
-                                <img src={instagramIcon} alt="Instagram" />
-                            </a>
-                            <a href="#" aria-label="YouTube">
-                                <img src={youtubeIcon} alt="YouTube" />
-                            </a>
-                        </div>
+                    <nav className="pv-footer-links">
+                        <a href="#">이용약관</a>
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이용안내</a>
+                    </nav>
+                </div>
+
+                <div className="pv-footer-col pv-footer-col--socials">
+                    <div className="pv-footer-socials">
+                        <a href="#" aria-label="Instagram">
+                            <img src={instagramIcon} alt="Instagram" />
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <img src={youtubeIcon} alt="YouTube" />
+                        </a>
                     </div>
                 </div>
             </div>
