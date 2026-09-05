@@ -455,8 +455,6 @@
 
     /* ========================================
      MOBILE MENU PANEL
-     실제 렌더링된 헤더 높이(JS로 측정해 --header-height에 저장)를
-     그대로 사용해서 헤더 바로 아래 정확히 붙게 한다.
   ======================================== */
 
     .mobile-menu {
@@ -646,6 +644,8 @@
 
         font-size: 17px;
         font-weight: 600;
+
+        text-decoration: none;
     }
 
     .mobile-dropdown.secondary {
@@ -659,6 +659,8 @@
 
         font-size: 17px;
         font-weight: 600;
+
+        text-decoration: none;
     }
 
     .mobile-dropdown.secondary .mobile-submenu {
