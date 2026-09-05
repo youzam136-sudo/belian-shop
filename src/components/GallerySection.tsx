@@ -7,8 +7,10 @@ function GalleryItem({ className, delay }: { className: string; delay?: 1 | 2 | 
         <Link
             to="/community/event"
             ref={ref}
-            className={revealClass(`gallery-item ${className}`, isVisible, delay)}
-        />
+            className={revealClass("gallery-item", isVisible, delay)}
+        >
+            <div className={`gallery-item-bg ${className}`} />
+        </Link>
     );
 }
 
