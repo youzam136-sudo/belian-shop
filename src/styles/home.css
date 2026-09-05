@@ -183,13 +183,13 @@
 }
 
 .hero-more-btn:hover {
-    background: rgba(255, 255, 255, 0.92);
-    transform: scale(1.06);
-    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.92) !important;
+    transform: scale(1.06) !important;
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.25) !important;
 }
 
 .hero-more-btn:active {
-    transform: scale(0.97);
+    transform: scale(0.97) !important;
 }
 
 .hero-dots {
