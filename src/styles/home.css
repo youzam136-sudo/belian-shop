@@ -124,7 +124,10 @@
     filter: blur(0);
     transform: translateY(0);
 }
-
+.hero-slide {
+    background-position: center;
+    background-position-x: center;
+}
 @media (prefers-reduced-motion: reduce) {
     .hero-copy.reveal .hero-copy-line span,
     .hero-copy.reveal p,
