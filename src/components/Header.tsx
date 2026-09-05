@@ -32,7 +32,6 @@ function Header() {
     }, []);
 
     // 실제 렌더링된 헤더 높이를 측정해서 CSS 변수(--header-height)로 저장.
-    // 모바일 메뉴가 헤더 바로 아래 정확히 붙도록, 고정 px값 대신 이 변수를 사용한다.
     useEffect(() => {
         const updateHeaderHeight = () => {
             if (headerRef.current) {
@@ -239,7 +238,7 @@ function Header() {
                         JOIN
                     </Link>
 
-                    {/* MY PAGE */}
+                    {/* MY PAGE - 텍스트는 숨기고 아이콘만 표시 */}
                     <div className="mobile-dropdown secondary">
                         <button
                             type="button"
@@ -249,7 +248,8 @@ function Header() {
                             }
                         >
                             <span>
-                                <MyPageIcon className="header-icon-svg" /> 마이페이지
+                                <MyPageIcon className="header-icon-svg" />
+                                {/* 마이페이지 */}
                             </span>
 
                             <span
@@ -293,12 +293,14 @@ function Header() {
                         </div>
                     </div>
 
+                    {/* CART - 텍스트는 숨기고 아이콘 + 숫자만 표시 */}
                     <Link
                         to="/cart"
                         className="mobile-secondary-link"
                         onClick={closeMobileMenu}
                     >
-                        <CartIcon className="header-icon-svg" /> 장바구니 <b>0</b>
+                        <CartIcon className="header-icon-svg" />
+                        {/* 장바구니 */} <b>0</b>
                     </Link>
 
                 </div>
