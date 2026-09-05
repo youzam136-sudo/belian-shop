@@ -130,14 +130,17 @@
     color: #000;
     white-space: nowrap;
     font-family: "ABC Maxi Round", -apple-system, "Malgun Gothic", sans-serif;
-    font-size: 390px;
-    font-weight: 700;
+    font-size: 150px;
     line-height: 1;
 }
 
 @keyframes pv-footer-marquee-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -163,6 +166,6 @@
     }
 
     .pv-footer-marquee {
-        padding: 40px 0;
+        padding: 1px 0 49px;
     }
 }
