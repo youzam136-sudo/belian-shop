@@ -5,10 +5,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useReveal, revealClass } from "../hooks/useReveal";
 
-import heroBg from "../assets/brand-hero.png";
+import heroBg from "../assets/brand-hero-2.png";
 import storyImg1 from "../assets/brand-story-1.png";
-import storyImg2 from "../assets/brand-story-2.png";
-import storyImg3 from "../assets/brand-story-3.png";
+import storyImg2 from "../assets/brand-story-2-new.png";
+import storyImg3 from "../assets/brand-story-3-new.png";
 
 function StoryRow({
     image,
