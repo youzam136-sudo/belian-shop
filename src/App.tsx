@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import MyPage from "./pages/MyPage";
@@ -26,10 +27,10 @@ import ReviewPage from "./pages/ReviewPage";
 import CouponPage from "./pages/CouponPage";
 import ProfilePage from "./pages/ProfilePage";
 import CheckoutPage from "./pages/CheckoutPage";
-
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <CustomCursor />
       <Routes>
         <Route
@@ -120,5 +121,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
